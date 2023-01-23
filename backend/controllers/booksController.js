@@ -1,37 +1,63 @@
 const asyncHandler = require('express-async-handler');
+const Book = require('../model/bookModel');
 
 // @desc    Get books
 // @route   GET /api/books
 // @access  Private
 const getBooks = asyncHandler(async (req, res) => {
-    res.status(200).json({ message: "Get Books" });
+    const books = await Book.find();
+    res.status(200).json(books);
 })
 
 // @desc    Create a book
 // @route   POST /api/books
 // @access  Private
 const createBook = asyncHandler(async (req, res) => {
-    console.log(req.body);
     if (!req.body.name) {
         console.log(req.body.name);
         res.status(400)
-        throw new Error('Please add book\'s name');
+        throw new Error('Please add book\'s details');
     }
-    res.status(200).json({ message: "Create a Book" });
+    const book = await Book.create({
+        name: req.body.name,
+        author: req.body.author
+    })
+    res.status(200).json(book);
 })
 
 // @desc    Update a book
 // @route   PUT /api/books/:id
 // @access  Private
 const updateBook = asyncHandler(async (req, res) => {
-    res.status(200).json({ message: `Update a Book ${req.params.id}` });
+    const book = await Book.findById(req.params.id);
+    if (!book) {
+        res.status(400)
+        throw new Error('The book is not exist');
+    }
+
+    const updatedBook = await Book.findByIdAndUpdate(
+        req.params.id,
+        req.body,
+        { 
+            new: true, 
+        })
+
+    res.status(200).json(updatedBook);
 })
 
 // @desc    Delete a book
 // @route   DELETE /api/books/:id
 // @access  Private
 const deleteBook = asyncHandler(async (req, res) => {
-    res.status(200).json({ message: `Delete a Book ${req.params.id}` });
+    const book = await Book.findById(req.params.id);
+    if (!book) {
+        res.status(400)
+        throw new Error('The book is not exist');
+    }
+
+    const removeBook = await Book.findByIdAndDelete(req.params.id)
+
+    res.status(200).json(removeBook);
 })
 
 module.exports = {
