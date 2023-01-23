@@ -13,13 +13,13 @@ const getBooks = asyncHandler(async (req, res) => {
 // @route   POST /api/books
 // @access  Private
 const createBook = asyncHandler(async (req, res) => {
-    if (!req.body.name) {
-        console.log(req.body.name);
+    if (!req.body) {
+        console.log(`Create new book - body: title - ${req.body.title} | author: ${req.body.author}`);
         res.status(400)
         throw new Error('Please add book\'s details');
     }
     const book = await Book.create({
-        name: req.body.name,
+        title: req.body.title,
         author: req.body.author
     })
     res.status(200).json(book);
