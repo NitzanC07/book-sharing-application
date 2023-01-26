@@ -2,6 +2,11 @@ const mongoose = require('mongoose');
 
 const bookSchema = mongoose.Schema(
     {
+        owner: {
+            type: mongoose.Schema.Types.ObjectId,
+            required: true,
+            ref: 'User',
+        },
         title: {
             type: String,
             required: [true, 'Please add a book\'s name']
@@ -12,7 +17,8 @@ const bookSchema = mongoose.Schema(
         },
         language: {
             type: String,
-            required: [true, 'Please enter the language of the book.'],
+            required: [false, 'Please enter the language of the book.'],
+            default: "Book's language"
         },
         year: {
             type: Number,
@@ -29,7 +35,7 @@ const bookSchema = mongoose.Schema(
             required: false,
             default: 0
         }, 
-        image: {
+        imageUrl: {
             type: String,
             required: false,
             default: "No Image"
@@ -39,17 +45,12 @@ const bookSchema = mongoose.Schema(
             required: false,
             default: true
         }, 
-        owner: {
-            type: String,
-            required: false,
-            default: "Book's owner"
-        },
         genre: {
             type: String,
             required: false,
             default: "Book's genre"
         },
-        durationLoan: {
+        lendPeriod: {
             type: Number,
             required: false,
             default: 30
