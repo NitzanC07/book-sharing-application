@@ -71,18 +71,13 @@ const loginUser = asyncHandler(async (req, res) => {
 // @route   GET /api/users/me
 // @access  Private
 const getUserData =asyncHandler(async (req, res) => {
-    const { _id, name, email } = await User.findById(req.user.id);   
-    res.status(200).json({
-        id: _id,
-        name,
-        email
-    })
+    res.status(200).json(req.user);
 })
 
 // @desc    Update current user's data.
 // @route   PUT /api/users/me
 // @access  Private
-const updateUserData =asyncHandler(async (req, res) => {
+const updateUserData = asyncHandler(async (req, res) => {
 
     const userUpdate = await User.findByIdAndUpdate(
         req.user.id,
@@ -106,5 +101,5 @@ module.exports = {
     registerUser,
     loginUser,
     getUserData,
-    updateUserData,
+    updateUserData
 }

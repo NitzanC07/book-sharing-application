@@ -54,13 +54,12 @@ const updateBook = asyncHandler(async (req, res) => {
     }
 
     // Check for the authorized user.
-    const user = await User.findById(req.user.id);
-    if (!user) {
+    if (!req.user) {
         res.status(401);
         throw new Error('User not found.');
     }
 
-    if (book.owner.toString() !== user.id) {
+    if (book.owner.toString() !== req.user.id) {
         res.status(401);
         throw new Error('You are not the book\'s owner.');
     }
@@ -86,13 +85,12 @@ const deleteBook = asyncHandler(async (req, res) => {
     }
 
     // Check for the authorized user.
-    const user = await User.findById(req.user.id);
-    if (!user) {
+    if (!req.user) {
         res.status(401);
         throw new Error('User not found.');
     }
 
-    if (book.owner.toString() !== user.id) {
+    if (book.owner.toString() !== req.user.id) {
         res.status(401);
         throw new Error('You are not the book\'s owner.');
     }
@@ -107,5 +105,5 @@ module.exports = {
     getMyBooks,
     createBook,
     updateBook,
-    deleteBook,
+    deleteBook
 }
