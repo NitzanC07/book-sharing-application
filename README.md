@@ -24,16 +24,19 @@ For this project I build both server side and client side, and I use variety of 
 * React-router-dom - To navigate between the pages and sections of the web application on the client side.
 
 ## Run Locally
-1. Clone the repository to your local machine and go to the project directory.
+1. Clone the repository to your local machine.
 ```bash
 git clone https://github.com/NitzanC07/book-sharing-application.git
-cd .\\book-sharing-application
 ```
-2. Install dependencies NPM
+2. Go to the project directory.
+```bash
+cd .\book-sharing-application
+```
+3. Install dependencies NPM
 ```bash
 npm install
 ```
-3. Start run server and client. The server is running on port 5000, and the client running on port 3000.
+4. Start run server and client. The server is running on port 5000, and the client running on port 3000.
 ```bash
 npm run dev
 ```
