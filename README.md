@@ -1,4 +1,4 @@
-# Sharing books Application
+# Sharing Books Application
 
 ## Vission
 Enable every person in the world access to education for free, and encourage actively reading and creativity writing on a regular basis.
@@ -25,16 +25,16 @@ For this project I build both server side and client side, and I use variety of 
 
 ## Run Locally
 1. Clone the repository to your local machine and go to the project directory.
-```terminal
+```bash
 git clone https://github.com/NitzanC07/book-sharing-application.git
-cd ./book-sharing-application
+cd .\\book-sharing-application
 ```
 2. Install dependencies NPM
-```terminal
+```bash
 npm install
 ```
 3. Start run server and client. The server is running on port 5000, and the client running on port 3000.
-```terminal
+```bash
 npm run dev
 ```
 
