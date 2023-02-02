@@ -18,7 +18,7 @@ const bookSchema = mongoose.Schema(
         language: {
             type: String,
             required: [false, 'Please enter the language of the book.'],
-            default: "Book's language"
+            default: "Hebrew"
         },
         year: {
             type: Number,
