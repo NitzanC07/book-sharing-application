@@ -14,6 +14,26 @@ const userSchema = mongoose.Schema({
         type: String,
         required: [true, 'Please enter your password']
     },
+    location: {
+        type: String,
+        default: 'City'
+    },
+    imageUrl: {
+        type: String,
+        default: 'Profile picture'
+    },
+    rating: {
+        type: Number,
+        default: 0
+    },
+    feedback: {
+        type: Array,
+        default: []
+    },
+    wishlist: {
+        type: Array,
+        default: []
+    }
 }, 
 {
     timestamps: true

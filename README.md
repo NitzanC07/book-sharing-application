@@ -58,11 +58,16 @@ npm run dev
 @route  POST /api/users/register
 @access Public
 ```
-| Parameters  | Type   | Description                    |
-| :-----------|:-------|:-------------------------------|
-| `name`      |`string`| **Required**. user's name      |
-| `email`     |`string`| **Required** and **unique**.   |
-| `password`  |`string`| **Required**. Hashing with JWT |
+| Parameters  | Type   | Description                     |
+| :-----------|:-------|:--------------------------------|
+| `name`      |`string`| **Required**. user's name       |
+| `email`     |`string`| **Required** and **unique**.    |
+| `password`  |`string`| **Required**. Hashing with JWT  |
+| `location`  |`string`| Default value: 'City'           |
+| `imageUrl`  |`string`| Default value: 'Profile picture'|
+| `rating`    |`number`| Default value: 0                |
+| `feedback`  |`array` | Default value: []               |
+| `wishlist`  |`array` | Default value: []               |
 
 #### Authenticate existing user.
 ```http
