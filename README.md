@@ -139,7 +139,7 @@ This route doesn't get any parameter. It response all the books of all the users
 
 #### Delete user's book
 ```http
-@route  DELETE /api/books/:id
+@route  DELETE /api/books/my-books/:id
 @access Private
 ```
 |Parameters | Type   | Description                         |
@@ -149,7 +149,7 @@ This route doesn't get any parameter. It response all the books of all the users
 
 #### Update user's book
 ```http
-@route  PUT /api/books/:id
+@route  PUT /api/books/my-books/:id
 @access Private
 ```
 |Parameters | Type   | Description                         |
