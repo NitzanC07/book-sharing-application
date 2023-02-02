@@ -61,16 +61,17 @@ npm run dev
 @route  POST /api/users/register
 @access Public
 ```
-| Parameters  | Type   | Description                     |
-| :-----------|:-------|:--------------------------------|
-| `name`      |`string`| **Required**. user's name       |
-| `email`     |`string`| **Required** and **unique**.    |
-| `password`  |`string`| **Required**. Hashing with JWT  |
-| `location`  |`string`| Default value: 'City'           |
-| `imageUrl`  |`string`| Default value: 'Profile picture'|
-| `rating`    |`number`| Default value: 0                |
-| `feedback`  |`array` | Default value: []               |
-| `wishlist`  |`array` | Default value: []               |
+| Parameters  | Type   |Default |Description |
+| :-----------|:-------|:-------|:-----------|
+| `name`      |`string`|| **Required**. user's name |
+| `email`     |`string`|| **Required** and **unique**. |
+| `password`  |`string`|| **Required**. Hashing with JWT |
+| `location`  |`object`|{city: '', country: ''}||
+| `contact`   |`string`|{phone: '', social: ''}||
+| `imageUrl`  |`string`|'Profile picture'||
+| `rating`    |`number`|0|Feedback about the user in scale of 1 to 5|
+| `feedback`  |`array` |[] (Empty array)|Feedback about the user from other users|
+| `wishlist`  |`array` |[] (Empty array)||
 
 #### Authenticate existing user.
 ```http
