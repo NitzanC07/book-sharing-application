@@ -12,7 +12,7 @@ const { protect } = require('../middleware/authMiddleware');
 router.route('/create-book').post(protect, createBook);
 router.route('/all-books').get(protect, getAllBooks);
 router.route('/my-books').get(protect, getMyBooks);
-router.route('/:id').delete(protect, deleteBook);
-router.route('/:id').put(protect, updateBook);
+router.route('/my-books/:id').delete(protect, deleteBook);
+router.route('/my-books/:id').put(protect, updateBook);
 
 module.exports = router;

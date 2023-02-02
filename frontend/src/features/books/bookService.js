@@ -30,9 +30,22 @@ const getBooks = async (token) => {
     return response.data;
 }
 
+// Delete user book
+const deleteBook = async (bookId, token) => {
+    const config = {
+        headers: {
+            Authorization: `Bearer ${token}`,
+        }
+    }
+    const response = await axios.delete(`${API_URI}/my-books/${bookId}`, config)
+
+    return response.data;
+}
+
 const bookService = {
     createBook,
-    getBooks
+    getBooks,
+    deleteBook
 }
 
 export default bookService;

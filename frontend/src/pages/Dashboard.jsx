@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import BookForm from "../components/BookForm";
 import Spinner from "../components/Spinner";
 import { getBooks, reset } from "../features/books/bookSlice";
+import Book from "../components/Book";
 
 function Dashboard() {
 
@@ -46,12 +47,14 @@ function Dashboard() {
         {
           books.length > 0 ? 
           books.map((book, i) => (
-            <div key={i}>
-              <h3>Book {i+1}</h3>  
-              <p>Title: {book['title']}</p>
-              <p>Author: {book['author']}</p>
-              <p>Lend Period (days): {book['lendPeriod']}</p>
-            </div>
+            <Book 
+              key={i}
+              index={i}
+              id={book['_id']}
+              title={book['title']}
+              author={book['author']}
+              lendPeriod={book['lendPeriod']}
+            />
           )) : 
           <h3>You have not books on your shelf.</h3>
         }
