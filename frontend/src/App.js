@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ToastContainer  } from 'react-toastify';
 import './app.css';
-import './styles/connection.css';
+import './styles/form/form.css';
 import './styles/dashboard/dashboard.css';
 import Header from './components/Header/Header';
 import Dashboard from './pages/Dashboard';
@@ -9,6 +9,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import AddNewBook from './pages/AddNewBook';
 import MyBooks from './pages/MyBooks';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
             <Route path='/create-book' element={<AddNewBook />} />
             <Route path='/my-books' element={<MyBooks />} />
           </Routes>
+          <Footer />
         </div>
       </Router>
 

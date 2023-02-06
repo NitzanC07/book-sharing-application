@@ -28,8 +28,14 @@ function AddNewBook() {
         <h2 className='page__title'>הוספת ספר חדש</h2>
         <form onSubmit={onSubmit} className="form">
             <div className='form-group'>
-                <label htmlFor='bookTitle'>שם הספר: </label>
+                <label 
+                    htmlFor='bookTitle' 
+                    className='form__label'
+                >
+                    שם הספר: 
+                </label>
                 <input 
+                    className='form__input'
                     type='text'
                     name='bookTitle'
                     id='bookTitle'
@@ -39,8 +45,14 @@ function AddNewBook() {
                 />
             </div>
             <div className='form-group'>
-                <label htmlFor='bookAuthor'>מחבר הספר: </label>
+                <label 
+                    htmlFor='bookAuthor'
+                    className='form__label'
+                >
+                    מחבר הספר: 
+                </label>
                 <input 
+                    className='form__input'
                     type='text'
                     name='bookAuthor'
                     id='bookAuthor'
@@ -50,8 +62,14 @@ function AddNewBook() {
                 />
             </div>
             <div className='form-group'>
-                <label htmlFor='bookLendPeriod'>תקופת השאלה (בימים): </label>
+                <label 
+                    htmlFor='bookLendPeriod'
+                    className='form__label'
+                >
+                    תקופת השאלה (בימים): 
+                </label>
                 <input 
+                    className='form__input'
                     type='number'
                     name='bookLendPeriod'
                     id='bookLendPeriod'
@@ -61,7 +79,7 @@ function AddNewBook() {
             </div>
             <div className="form-group">
                 <button 
-                    className="submit-button"
+                    className="form__submit-button"
                     type='submit'
                 >
                     הוספת ספר למדף הספרים האישי

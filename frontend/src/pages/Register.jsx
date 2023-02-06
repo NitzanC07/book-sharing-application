@@ -5,7 +5,7 @@ import { toast } from 'react-toastify';
 import { FaUser } from 'react-icons/fa';
 import { register, reset } from '../features/auth/authSlice';
 import { useEffect } from "react";
-import Spinner from "../components/Loading/Laoding";
+import Loading from "../components/Loading/Laoding";
 
 function Register() {
 
@@ -60,15 +60,15 @@ function Register() {
     }
 
     if (isLoading) {
-        return <Spinner />
+        return <Loading />
     }
 
     
   return (
-    <>
+    <section className="page">
         <section>
-            <h1 className="title"><FaUser /> הרשמה למערכת</h1>
-            <p className="subtitle">צור חשבון משתמש והתחל לשתף ספרים</p>
+            <h1 className="page__title"><FaUser /> הרשמה למערכת</h1>
+            <p className="page__text">צור חשבון משתמש והתחל לשתף ספרים</p>
         </section>
         <section className="form">
             <form onSubmit={onSubmit}>
@@ -127,7 +127,7 @@ function Register() {
                 </div>
             </form>
         </section>
-    </>
+    </section>
   )
 }
 

@@ -1,23 +1,5 @@
-.title {
-    font-family: 'Varela_Round', 'Rubik', 'Yehuda';
-    text-decoration: none;
-    font-size: 24px;
-    line-height: 26px;
-    width: fit-content;
-    margin: 0 auto 30px;
-}
-
-.subtitle {
-    font-family: 'Varela_Round', 'Rubik', 'Yehuda';
-    text-decoration: none;
-    font-size: 18px;
-    line-height: 20px;
-    width: fit-content;
-    margin: 0 auto 30px;
-}
-
 .form {
-    width: 30%;
+    width: 32%;
     margin: 0 auto;
     padding: 0;
 }
@@ -27,14 +9,25 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin: 0 0 10px 0;
+    margin: 0 0 15px 0;
     font-family: 'Varela_Round', 'Rubik', 'Yehuda';
     text-decoration: none;
     font-size: 18px;
     line-height: 20px;
 }
 
-.submit-button {
+.form__label {
+    width: fit-content;
+}
+
+.form__input {
+    width: fit-content;
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px solid #000;
+}
+
+.form__submit-button {
     width: 100%;
     background-color: #777;
     border: 0;

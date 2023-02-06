@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { toast } from 'react-toastify';
 import { login, reset } from '../features/auth/authSlice';
 import { useEffect } from "react";
-import Spinner from "../components/Loading/Laoding";
+import Loading from "../components/Loading/Laoding";
 
 function Login() {
 
@@ -48,14 +48,14 @@ function Login() {
     }
 
     if (isLoading) {
-        return <Spinner />
+        return <Loading />
     }
 
   return (
-    <>
+    <section className="page">
         <section>
-            <h1 className="title"><FaSignInAlt /> כניסת משתמש קיים</h1>
-            <p className="subtitle">הכנס עם דוא"ל וסיסמא</p>
+            <h1 className="page__title"><FaSignInAlt /> כניסת משתמש קיים</h1>
+            <p className="page__text">הכנס עם דוא"ל וסיסמא</p>
         </section>
         <section className="form">
             <form onSubmit={onSubmit}>
@@ -90,7 +90,7 @@ function Login() {
                 </div>
             </form>
         </section>
-    </>
+    </section>
   )
 }
 

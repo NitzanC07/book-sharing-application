@@ -1,0 +1,10 @@
+.footer__text {
+    margin: 10px 0;
+    padding: 0;
+    font-family: 'Varela_Round', 'Rubik', 'Yehuda';
+    text-decoration: none;
+    text-align: center;
+    color: #000;
+    font-size: 15px;
+    line-height: 17px;
+}
