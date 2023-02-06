@@ -1,0 +1,10 @@
+.page__books-container {
+    /* background-color: #999; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    overflow-y: scroll;
+    height: 700px;
+}

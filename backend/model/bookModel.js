@@ -9,26 +9,31 @@ const bookSchema = mongoose.Schema(
         },
         title: {
             type: String,
-            required: [true, 'Please add a book\'s name']
+            required: [true, 'שדה זה הינו חובה. אנא הכנס את שם הספר.']
         },
         author: {
             type: String,
-            required: [true, 'Please add an author\'s name']
+            required: [true, 'שדה זה הינו חובה. אנא הכנס את שם מחבר הספר.']
         },
+        availibilty: {
+            type: Boolean,
+            required: false,
+            default: true
+        }, 
         language: {
             type: String,
-            required: [false, 'Please enter the language of the book.'],
-            default: "Hebrew"
+            required: false,
+            default: "שפת הספר"
         },
         year: {
             type: Number,
             required: false,
-            default: 1900
+            default: 0
         },
         description: {
             type: String,
             required: false,
-            default: "Please tell us about the book status."
+            default: "תיאור הספר בקצרה."
         }, 
         numberOfPages: {
             type: Number,
@@ -38,17 +43,12 @@ const bookSchema = mongoose.Schema(
         imageUrl: {
             type: String,
             required: false,
-            default: "No Image"
+            default: "Not Availible"
         },
-        availibilty: {
-            type: Boolean,
-            required: false,
-            default: true
-        }, 
         genre: {
             type: String,
             required: false,
-            default: "Book's genre"
+            default: "סוגה"
         },
         lendPeriod: {
             type: Number,

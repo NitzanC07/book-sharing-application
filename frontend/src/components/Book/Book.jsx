@@ -1,17 +1,20 @@
+import './book.css';
+import './__delete-btn/book__delete-btn.css';
 import { useDispatch } from 'react-redux';
 import { deleteBook } from '../../features/books/bookSlice';
 
 function Book(props) {
 
-    const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
   return (
-    <div key={props.index}>
-        <h3>ספר {props.index+1}</h3>  
-        <p>שם הספר: {props.title}</p>
-        <p>מחבר: {props.author}</p>
-        <p>תקופת השאלה (בימים): {props.lendPeriod}</p>
-        <button className="delete-button" onClick={() => dispatch(deleteBook(props.id))}>הסר ספר</button>
+    <div className='book' key={props.index}>
+        <h3 className='page__subtitle'>{props.title}</h3>
+        <p className='page__text'>מחבר: {props.author}</p>
+        <p className='page__text'>שפה: {props.language}</p>
+        <p className='page__text'>תיאור: {props.description}</p>
+        
+        <button className="book__delete-btn" onClick={() => dispatch(deleteBook(props.id))}>הסר</button>
     </div>
   )
 }

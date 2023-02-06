@@ -73,55 +73,75 @@ function Register() {
         <section className="form">
             <form onSubmit={onSubmit}>
                 <div className="form-group">
-                    <label htmlFor="name">שם: </label>
-                    <input 
+                    <label 
+                        htmlFor="name"
+                        className="form__label"
+                    >
+                        שם: 
+                    </label>
+                    <input
+                        className='form__input'
                         type='text'
-                        className='form-control'
                         id='name'
                         name="name"
                         value={name}
-                        placeholder='Enter your name'
+                        placeholder='הכנס את שמך'
                         onChange={onChange}
                     />
                 </div>
                 <div className="form-group">
-                <label htmlFor="email">דוא"ל: </label>
+                    <label 
+                        className="form__label"
+                        htmlFor="email"
+                    >
+                        דוא"ל: 
+                    </label>
                     <input 
+                        className='form__input'
                         type='email'
-                        className='form-control'
                         id='email'
                         name="email"
                         value={email}
-                        placeholder='Enter your E-mail'
+                        placeholder='הכנס כתובת דואר אלקטרוני'
                         onChange={onChange}
                     />
                 </div>
                 <div className="form-group">
-                    <label htmlFor="pssword">סיסמא: </label>
+                    <label
+                        className="form__label"
+                        htmlFor="pssword"
+                        >
+                            סיסמא: 
+                        </label>
                     <input 
+                        className='form__input'
                         type='password'
-                        className='form-control'
                         id='password'
                         name="password"
                         value={password}
-                        placeholder='Enter password'
+                        placeholder='הכנס סיסמא'
                         onChange={onChange}
                     />
                 </div>
                 <div className="form-group">
-                    <label htmlFor="pssword2">אישור סיסמא: </label>
+                    <label 
+                        className="form__label" 
+                        htmlFor="pssword2"
+                    >
+                        אישור סיסמא: 
+                    </label>
                     <input 
+                        className='form__input'
                         type='password'
-                        className='form-control'
                         id='password2'
                         name="password2"
                         value={password2}
-                        placeholder='Confirm password'
+                        placeholder='הכנס סיסמא בשנית'
                         onChange={onChange}
                     />
                 </div>
                 <div className="form-group">
-                    <button type='submit' className="submit-button">
+                    <button type='submit' className="form__submit-button">
                         הרשם
                     </button>
                 </div>

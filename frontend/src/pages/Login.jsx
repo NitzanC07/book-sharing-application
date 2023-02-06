@@ -60,31 +60,41 @@ function Login() {
         <section className="form">
             <form onSubmit={onSubmit}>
                 <div className="form-group">
-                    <label htmlFor="email">דוא"ל: </label>
+                    <label 
+                        className="form__label"
+                        htmlFor="email"
+                    >
+                        דוא"ל: 
+                    </label>
                     <input 
+                        className='form__input'
                         type='email'
-                        className='form-control'
                         id='email'
                         name="email"
                         value={email}
-                        placeholder='Enter your E-mail'
+                        placeholder='הכנס כתובת דואר אלקטרוני'
                         onChange={onChange}
                     />
                 </div>
                 <div className="form-group">
-                    <label htmlFor="password">סיסמא: </label>
+                    <label 
+                        className="form__label"
+                        htmlFor="password"
+                    >
+                        סיסמא: 
+                    </label>
                     <input 
+                        className='form__input'
                         type='password'
-                        className='form-control'
                         id='password'
                         name="password"
                         value={password}
-                        placeholder='Enter password'
+                        placeholder='הכנס סיסמא'
                         onChange={onChange}
                     />
                 </div>
                 <div className="form-group">
-                    <button type='submit' className="submit-button">
+                    <button type='submit' className="form__submit-button">
                         התחבר
                     </button>
                 </div>

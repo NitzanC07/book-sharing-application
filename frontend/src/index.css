@@ -3,6 +3,7 @@
 @import url('./styles/page/__title/page__title.css');
 @import url('./styles/page/__subtitle/page__subtitle.css');
 @import url('./styles/page/__text/page__text.css');
+@import url('./styles/page/__books-container/page__books-container.css');
 
 #root, body {
     margin: 0;

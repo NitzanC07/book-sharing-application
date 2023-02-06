@@ -17,6 +17,7 @@ function App() {
       <Router>
         <div className="app">
           <Header />
+
           <Routes>
             <Route exact path='/' element={<Dashboard />} />
             <Route path='/login' element={<Login />} />
@@ -24,6 +25,7 @@ function App() {
             <Route path='/create-book' element={<AddNewBook />} />
             <Route path='/my-books' element={<MyBooks />} />
           </Routes>
+          
           <Footer />
         </div>
       </Router>
