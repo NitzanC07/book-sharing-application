@@ -1,20 +1,27 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ToastContainer  } from 'react-toastify';
-import Header from './components/Header';
+import './app.css';
+import './styles/connection.css';
+import './styles/dashboard/dashboard.css';
+import Header from './components/Header/Header';
 import Dashboard from './pages/Dashboard';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import AddNewBook from './pages/AddNewBook';
+import MyBooks from './pages/MyBooks';
 
 function App() {
   return (
     <>
       <Router>
-        <div className="container">
+        <div className="app">
           <Header />
           <Routes>
-            <Route path='/' element={<Dashboard />} />
+            <Route exact path='/' element={<Dashboard />} />
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />
+            <Route path='/create-book' element={<AddNewBook />} />
+            <Route path='/my-books' element={<MyBooks />} />
           </Routes>
         </div>
       </Router>

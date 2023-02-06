@@ -1,0 +1,9 @@
+.page__text {
+    font-family: 'Varela_Round', 'Rubik', 'Yehuda';
+    text-decoration: none;
+    color: #000;
+    font-size: 15px;
+    line-height: 17px;
+    margin: 0 10px 20px;
+    padding: 0;
+}

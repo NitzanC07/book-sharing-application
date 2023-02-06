@@ -5,7 +5,7 @@ import { toast } from 'react-toastify';
 import { FaUser } from 'react-icons/fa';
 import { register, reset } from '../features/auth/authSlice';
 import { useEffect } from "react";
-import Spinner from "../components/Spinner";
+import Spinner from "../components/Loading/Laoding";
 
 function Register() {
 
@@ -66,13 +66,14 @@ function Register() {
     
   return (
     <>
-        <section className="title">
-            <h1><FaUser /> Register</h1>
-            <p>Please create an account</p>
+        <section>
+            <h1 className="title"><FaUser /> הרשמה למערכת</h1>
+            <p className="subtitle">צור חשבון משתמש והתחל לשתף ספרים</p>
         </section>
         <section className="form">
             <form onSubmit={onSubmit}>
                 <div className="form-group">
+                    <label htmlFor="name">שם: </label>
                     <input 
                         type='text'
                         className='form-control'
@@ -84,6 +85,7 @@ function Register() {
                     />
                 </div>
                 <div className="form-group">
+                <label htmlFor="email">דוא"ל: </label>
                     <input 
                         type='email'
                         className='form-control'
@@ -95,6 +97,7 @@ function Register() {
                     />
                 </div>
                 <div className="form-group">
+                    <label htmlFor="pssword">סיסמא: </label>
                     <input 
                         type='password'
                         className='form-control'
@@ -106,6 +109,7 @@ function Register() {
                     />
                 </div>
                 <div className="form-group">
+                    <label htmlFor="pssword2">אישור סיסמא: </label>
                     <input 
                         type='password'
                         className='form-control'
@@ -117,8 +121,8 @@ function Register() {
                     />
                 </div>
                 <div className="form-group">
-                    <button type='submit' className="btn btn-block">
-                        Submit
+                    <button type='submit' className="submit-button">
+                        הרשם
                     </button>
                 </div>
             </form>

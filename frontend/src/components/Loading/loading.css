@@ -1,0 +1,14 @@
+.loadingContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 100px 0;
+}
+
+.loadingText {
+    font-family: 'Varela_Round', 'Rubik', 'Yehuda';
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 18px;
+}

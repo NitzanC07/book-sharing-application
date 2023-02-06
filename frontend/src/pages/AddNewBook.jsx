@@ -1,14 +1,16 @@
 import { useState } from 'react';
 import { useDispatch } from "react-redux";
+import { useNavigate } from 'react-router-dom';
 import { createBook } from '../features/books/bookSlice';
 
-function BookForm() {
+function AddNewBook() {
 
     const [bookTitle, setBookTitle] = useState('');
     const [bookAuthor, setBookAuthor] = useState('');
     const [bookLendPeriod, setBookLendPeriod] = useState(30);
 
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const onSubmit = (e) => {
         e.preventDefault();
@@ -17,33 +19,38 @@ function BookForm() {
             author: bookAuthor,
             lendPeriod: bookLendPeriod
         }))
+
+        navigate('/my-books')
     }
 
   return (
-    <section className="form">
-        <form onSubmit={onSubmit}>
+    <section className="page add-new-book">
+        <h2 className='page__title'>הוספת ספר חדש</h2>
+        <form onSubmit={onSubmit} className="form">
             <div className='form-group'>
-                <label htmlFor='bookTitle'>Book's name: </label>
+                <label htmlFor='bookTitle'>שם הספר: </label>
                 <input 
                     type='text'
                     name='bookTitle'
                     id='bookTitle'
                     value={bookTitle}
                     onChange={(e) => setBookTitle(e.target.value)}
+                    required
                 />
             </div>
             <div className='form-group'>
-                <label htmlFor='bookAuthor'>Book's Author: </label>
+                <label htmlFor='bookAuthor'>מחבר הספר: </label>
                 <input 
                     type='text'
                     name='bookAuthor'
                     id='bookAuthor'
                     value={bookAuthor}
                     onChange={(e) => setBookAuthor(e.target.value)}
+                    required
                 />
             </div>
             <div className='form-group'>
-                <label htmlFor='bookLendPeriod'>Lend period (days): </label>
+                <label htmlFor='bookLendPeriod'>תקופת השאלה (בימים): </label>
                 <input 
                     type='number'
                     name='bookLendPeriod'
@@ -54,10 +61,10 @@ function BookForm() {
             </div>
             <div className="form-group">
                 <button 
-                    className="btn btn-block"
+                    className="submit-button"
                     type='submit'
                 >
-                    Add book
+                    הוספת ספר למדף הספרים האישי
                 </button>
             </div>
         </form>
@@ -65,4 +72,4 @@ function BookForm() {
   )
 }
 
-export default BookForm
+export default AddNewBook

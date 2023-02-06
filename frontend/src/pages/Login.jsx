@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { toast } from 'react-toastify';
 import { login, reset } from '../features/auth/authSlice';
 import { useEffect } from "react";
-import Spinner from "../components/Spinner";
+import Spinner from "../components/Loading/Laoding";
 
 function Login() {
 
@@ -53,13 +53,14 @@ function Login() {
 
   return (
     <>
-        <section className="title">
-            <h1><FaSignInAlt /> Login</h1>
-            <p>Login and start read a book</p>
+        <section>
+            <h1 className="title"><FaSignInAlt /> כניסת משתמש קיים</h1>
+            <p className="subtitle">הכנס עם דוא"ל וסיסמא</p>
         </section>
         <section className="form">
             <form onSubmit={onSubmit}>
                 <div className="form-group">
+                    <label htmlFor="email">דוא"ל: </label>
                     <input 
                         type='email'
                         className='form-control'
@@ -71,6 +72,7 @@ function Login() {
                     />
                 </div>
                 <div className="form-group">
+                    <label htmlFor="password">סיסמא: </label>
                     <input 
                         type='password'
                         className='form-control'
@@ -82,8 +84,8 @@ function Login() {
                     />
                 </div>
                 <div className="form-group">
-                    <button type='submit' className="btn btn-block">
-                        Submit
+                    <button type='submit' className="submit-button">
+                        התחבר
                     </button>
                 </div>
             </form>

@@ -1,0 +1,18 @@
+.navigation-button {
+    margin: 0 10px 0;
+    padding: 0 15px;
+    cursor: pointer;
+    background-color: #777;
+    border: 1px solid #777;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    font-family: 'Varela_Round', 'Rubik', 'Yehuda';
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    line-height: 18px;
+}
+
+.navigation-button:hover {
+    border: 1px solid #222;
+}
