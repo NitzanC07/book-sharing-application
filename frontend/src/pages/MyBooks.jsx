@@ -34,6 +34,7 @@ function MyBooks(props) {
 
     return (
       <section className="page my-books">
+        <div className="page__content">
         <h2 className="page__title">מדף הספרים שלי</h2>
         <div className="page__books-container">
           {
@@ -62,6 +63,7 @@ function MyBooks(props) {
           }
         </div>
       
+        </div>
       </section>
     )
 }

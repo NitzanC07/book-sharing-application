@@ -1,12 +1,14 @@
 @import url('./vendor/fonts/fonts.css');
 @import url('./styles/page/page.css');
+@import url('./styles/page/__content/page__content.css');
 @import url('./styles/page/__title/page__title.css');
 @import url('./styles/page/__subtitle/page__subtitle.css');
 @import url('./styles/page/__text/page__text.css');
 @import url('./styles/page/__books-container/page__books-container.css');
 
-#root, body {
+#root, body, html {
     margin: 0;
     padding: 0;
+    height: 100%;
     background-color: #222;
 }

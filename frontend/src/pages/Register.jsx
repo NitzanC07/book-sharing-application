@@ -13,10 +13,15 @@ function Register() {
         name: '',
         email: '',
         password: '',
-        password2: ''
+        password2: '',
+        city: '',
+        country: '',
+        phone: '',
+        social: '',
+        imageUrl: '',
     })
 
-    const { name, email, password, password2 } = formData;
+    const { name, email, password, password2, city, country, phone, social, imageUrl } = formData;
 
     const navigate = useNavigate();
     const dispatch = useDispatch();
@@ -53,6 +58,11 @@ function Register() {
                 name,
                 email, 
                 password,
+                city, 
+                country,
+                phone,
+                social,
+                imageUrl
             }
 
             dispatch(register(userData));
@@ -140,6 +150,92 @@ function Register() {
                         onChange={onChange}
                     />
                 </div>
+                <div className="form-group">
+                    <label 
+                        className="form__label" 
+                        htmlFor="city"
+                    >
+                        עיר: 
+                    </label>
+                    <input 
+                        className='form__input'
+                        type='text'
+                        id='city'
+                        name="city"
+                        value={city}
+                        placeholder='עיר מגורים'
+                        onChange={onChange}
+                    />
+                </div>
+                <div className="form-group">
+                    <label 
+                        className="form__label" 
+                        htmlFor="country"
+                    >
+                        מדינה: 
+                    </label>
+                    <input 
+                        className='form__input'
+                        type='text'
+                        id='country'
+                        name="country"
+                        value={country}
+                        placeholder='מדינת מגורים'
+                        onChange={onChange}
+                    />
+                </div>
+                <div className="form-group">
+                    <label 
+                        className="form__label" 
+                        htmlFor="phone"
+                    >
+                        טלפון: 
+                    </label>
+                    <input 
+                        className='form__input'
+                        type='tel'
+                        id='phone'
+                        name="phone"
+                        value={phone}
+                        placeholder='XXX-ABCDEFG'
+                        onChange={onChange}
+                    />
+                </div>
+                <div className="form-group">
+                    <label 
+                        className="form__label" 
+                        htmlFor="text"
+                    >
+                        רשת חברתית: 
+                    </label>
+                    <input 
+                        className='form__input'
+                        type='string'
+                        id='social'
+                        name="social"
+                        value={social}
+                        placeholder='הדבק קישור לפרופיל האישי שלך ברשת חברתית.'
+                        onChange={onChange}
+                    />
+                </div>
+                <div className="form-group">
+                    <label 
+                        className="form__label" 
+                        htmlFor="imageUrl"
+                    >
+                        תמונת פרופיל: 
+                    </label>
+                    <input 
+                        className='form__input'
+                        type='text'
+                        id='imageUrl'
+                        name="imageUrl"
+                        value={imageUrl}
+                        placeholder='תמונת פרופיל'
+                        onChange={onChange}
+                    />
+                </div>
+
                 <div className="form-group">
                     <button type='submit' className="form__submit-button">
                         הרשם

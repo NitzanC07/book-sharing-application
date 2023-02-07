@@ -25,6 +25,10 @@ function Header() {
         navigate('/')
     }
 
+    const userDetails = () => {
+        console.log(`User details: ${user}`);
+    }
+
   return (
     <header className='header'>
         <section className='header__heading'>
@@ -35,11 +39,18 @@ function Header() {
                 {
                     user ?
                     (
-                        <li className='header__list-item'>
-                            <button className='header__link btn-logout' onClick={onLogout}>
-                                <FaSignOutAlt /> להתנתק
-                            </button>
-                        </li>
+                        <>
+                            <li className='header__list-item'>
+                                <button className='header__link btn-logout' onClick={userDetails}>
+                                    <p className="header__link">{user.name}</p>
+                                </button>
+                            </li>
+                            <li className='header__list-item'>
+                                <button className='header__link btn-logout' onClick={onLogout}>
+                                    להתנתק <FaSignOutAlt />
+                                </button>
+                            </li>
+                        </>
                     ) :
                     (
                         <>
@@ -59,15 +70,9 @@ function Header() {
                 
             </ul>
         </section>
-        {
-            user ?
-            <>
-                <h1 className="header__title">שלום {user && user.name}</h1>
-            </>
-            :
-            ""
-        }                
-        <Navigation />        
+
+        <Navigation />
+
     </header>
   )
 }

@@ -1,6 +1,11 @@
 .app {
-  width: 1200px;
+  width: 100%;
+  min-width: 430px;
   height: 100vh;
   margin: 0 auto;
   background-color: #eee;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }

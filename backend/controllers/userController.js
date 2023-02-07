@@ -7,7 +7,7 @@ const User = require('../model/userModel');
 // @route   POST /api/users/register
 // @access  Public
 const registerUser = asyncHandler(async (req, res) => {
-    const {name, email, password} = req.body;
+    const {name, email, password, city, country, phone, social, imageUrl} = req.body;
     // Check if all fields are filled.
     if (!name || !email || !password) {
         res.status(400)
@@ -29,7 +29,10 @@ const registerUser = asyncHandler(async (req, res) => {
     const user = await User.create({
         name,
         email,
-        password: hashedPassword
+        password: hashedPassword,
+        location: {city, country},
+        contact: {phone, social},
+        imageUrl: imageUrl
     })
 
     if(user) {
@@ -38,6 +41,9 @@ const registerUser = asyncHandler(async (req, res) => {
             name: user.name,
             email: user.email,
             token: generateToken(user._id),
+            location: {city: user.city, country: user.country},
+            contact: {phone: user.phone, social: user.social},
+            imageUrl: user.imageUrl
         })
     } else {
         res.status(400)

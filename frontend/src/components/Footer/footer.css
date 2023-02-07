@@ -1,6 +1,10 @@
 .footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     border-top: 1px solid #aaa;
-    position: absolute;
-        bottom: 0;
+    /* height: 10%; */
+    /* position: absolute;
+        bottom: 0; */
 }

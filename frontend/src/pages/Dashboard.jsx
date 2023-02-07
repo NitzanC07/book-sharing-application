@@ -2,7 +2,9 @@ function Dashboard() {
 
   return (
     <div className="page dashboard">
-      <h2 className='header__title'>מסך ראשי</h2>
+      <div className="page__content">
+        <h2 className='page__title'>מסך ראשי</h2>
+      </div>
     </div>
   )
 }
