@@ -54,20 +54,22 @@ function Login() {
   return (
     <section className="page">
         <section>
-            <h1 className="page__title"><FaSignInAlt /> כניסת משתמש קיים</h1>
-            <p className="page__text">הכנס עם דוא"ל וסיסמא</p>
+            <h1 className="page__title" tabIndex={8}><FaSignInAlt /> כניסת משתמש קיים</h1>
+            <p className="page__text" tabIndex={9}>הכנס עם דוא"ל וסיסמא</p>
         </section>
         <section className="form">
             <form onSubmit={onSubmit}>
                 <div className="form-group">
                     <label 
                         className="form__label"
+                        tabIndex={10}
                         htmlFor="email"
                     >
                         דוא"ל: 
                     </label>
                     <input 
                         className='form__input'
+                        tabIndex={11}
                         type='email'
                         id='email'
                         name="email"
@@ -79,12 +81,14 @@ function Login() {
                 <div className="form-group">
                     <label 
                         className="form__label"
+                        tabIndex={12}
                         htmlFor="password"
                     >
                         סיסמא: 
                     </label>
                     <input 
                         className='form__input'
+                        tabIndex={13}
                         type='password'
                         id='password'
                         name="password"
@@ -94,7 +98,11 @@ function Login() {
                     />
                 </div>
                 <div className="form-group">
-                    <button type='submit' className="form__submit-button">
+                    <button 
+                        type='submit' 
+                        className="form__submit-button"
+                        tabIndex={14}
+                    >
                         התחבר
                     </button>
                 </div>

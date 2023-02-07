@@ -35,7 +35,7 @@ function MyBooks(props) {
     return (
       <section className="page my-books">
         <div className="page__content">
-        <h2 className="page__title">מדף הספרים שלי</h2>
+        <h2 className="page__title" tabIndex={8}>מדף הספרים שלי</h2>
         <div className="page__books-container">
           {
             books.length > 0 ? 
@@ -59,7 +59,7 @@ function MyBooks(props) {
                 updatedAt={book['updatedAt']}
               />
             )) : 
-            <p className="page__text">אין לך עדיין ספרים.</p>
+            <p className="page__text" tabIndex={9}>אין לך עדיין ספרים.</p>
           }
         </div>
       

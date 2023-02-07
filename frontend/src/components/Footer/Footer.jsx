@@ -5,7 +5,7 @@ function Footer(props) {
 
     return(
         <footer className="footer">
-            <p className="footer__text">תחתית העמוד</p>
+            <p className="footer__text" tabIndex={0}>תחתית העמוד</p>
         </footer>
     )
 }

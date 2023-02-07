@@ -33,7 +33,7 @@ function Header() {
     <header className='header'>
         <section className='header__heading'>
             <div className='header__logo'>
-                <Link to='/' className='header__logo-text'>הספריה השיתופית</Link>
+                <Link to='/' className='header__logo-text' tabIndex={1}>הספריה השיתופית</Link>
             </div>
             <ul className='header__links'>
                 {
@@ -41,12 +41,12 @@ function Header() {
                     (
                         <>
                             <li className='header__list-item'>
-                                <button className='header__link btn-logout' onClick={userDetails}>
+                                <button className='header__link btn-logout' onClick={userDetails} tabIndex={2}>
                                     <p className="header__link">{user.name}</p>
                                 </button>
                             </li>
                             <li className='header__list-item'>
-                                <button className='header__link btn-logout' onClick={onLogout}>
+                                <button className='header__link btn-logout' onClick={onLogout} tabIndex={3}>
                                     להתנתק <FaSignOutAlt />
                                 </button>
                             </li>
@@ -55,12 +55,12 @@ function Header() {
                     (
                         <>
                             <li className='header__list-item'>
-                                <Link to='/login' className='header__link'>
+                                <Link to='/login' className='header__link' tabIndex={2}>
                                     <FaSignInAlt /> להתחבר
                                 </Link>
                             </li>
                             <li className='header__list-item'>
-                                <Link to='/register' className='header__link'>
+                                <Link to='/register' className='header__link' tabIndex={3}>
                                     <FaUser /> להרשם
                                 </Link>
                             </li>

@@ -40,17 +40,19 @@ function AddNewBook() {
   return (
     <section className="page add-new-book">
         <div className='page__content'>
-            <h2 className='page__title'>הוספת ספר חדש</h2>
+            <h2 className='page__title' tabIndex={7}>הוספת ספר חדש</h2>
             <form onSubmit={onSubmit} className="form">
                 <div className='form-group'>
                     <label 
                         htmlFor='bookTitle' 
                         className='form__label'
+                        tabIndex={8}
                     >
                         שם הספר: 
                     </label>
                     <input 
                         className='form__input'
+                        tabIndex={9}
                         type='text'
                         name='bookTitle'
                         id='bookTitle'
@@ -63,11 +65,13 @@ function AddNewBook() {
                     <label 
                         htmlFor='bookAuthor'
                         className='form__label'
+                        tabIndex={10}
                     >
                         מחבר הספר: 
                     </label>
                     <input 
                         className='form__input'
+                        tabIndex={11}
                         type='text'
                         name='bookAuthor'
                         id='bookAuthor'
@@ -80,11 +84,13 @@ function AddNewBook() {
                     <label 
                         htmlFor='bookLanguage'
                         className='form__label'
+                        tabIndex={12}
                     >
                         שפה: 
                     </label>
                     <input 
                         className='form__input'
+                        tabIndex={13}
                         type='string'
                         name='bookLanguage'
                         id='bookLanguage'
@@ -96,11 +102,13 @@ function AddNewBook() {
                     <label 
                         htmlFor='bookYear'
                         className='form__label'
+                        tabIndex={14}
                     >
                         שנת הוצאה: 
                     </label>
                     <input 
                         className='form__input'
+                        tabIndex={15}
                         type='number'
                         name='bookYear'
                         id='bookYear'
@@ -112,11 +120,13 @@ function AddNewBook() {
                     <label 
                         htmlFor='bookNumberOfPages'
                         className='form__label'
+                        tabIndex={16}
                     >
                         מספר עמודים: 
                     </label>
                     <input 
                         className='form__input'
+                        tabIndex={17}
                         type='number'
                         name='bookNumberOfPages'
                         id='bookNumberOfPages'
@@ -128,11 +138,13 @@ function AddNewBook() {
                     <label 
                         htmlFor='bookGenre'
                         className='form__label'
+                        tabIndex={18}
                     >
                         סוגה: 
                     </label>
                     <input 
                         className='form__input'
+                        tabIndex={19}
                         type='string'
                         name='bookGenre'
                         id='bookGenre'
@@ -144,11 +156,13 @@ function AddNewBook() {
                     <label 
                         htmlFor='bookDescription'
                         className='form__label'
+                        tabIndex={20}
                     >
                         תיאור הספר: 
                     </label>
                     <textarea 
                         className='form__input'
+                        tabIndex={21}
                         type='string'
                         cols={30}
                         rows={4}
@@ -163,11 +177,13 @@ function AddNewBook() {
                     <label 
                         htmlFor='bookImageUrl'
                         className='form__label'
+                        tabIndex={22}
                     >
                         תמונת הספר: 
                     </label>
                     <input 
                         className='form__input'
+                        tabIndex={23}
                         type='string'
                         name='bookImageUrl'
                         id='bookImageUrl'
@@ -179,11 +195,13 @@ function AddNewBook() {
                     <label 
                         htmlFor='bookLendPeriod'
                         className='form__label'
+                        tabIndex={24}
                     >
                         תקופת השאלה (בימים): 
                     </label>
                     <input 
                         className='form__input'
+                        tabIndex={25}
                         type='number'
                         name='bookLendPeriod'
                         id='bookLendPeriod'
@@ -195,11 +213,13 @@ function AddNewBook() {
                     <label 
                         htmlFor='bookAvailibilty'
                         className='form__label'
+                        tabIndex={26}
                     >
                         האם הספר זמין למסירה? 
                     </label>
                     <input 
                         className='form__input'
+                        tabIndex={27}
                         type='checkbox'
                         defaultChecked
                         name='bookAvailibilty'
@@ -212,6 +232,7 @@ function AddNewBook() {
                 <div className="form-group">
                     <button 
                         className="form__submit-button"
+                        tabIndex={28}
                         type='submit'
                     >
                         הוספת ספר למדף הספרים האישי
