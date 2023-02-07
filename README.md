@@ -20,6 +20,9 @@ In the first step I plan to build a web application with focus on two mainly fie
 Beside all of this, I make this enterprise as my technical project as a Full Stack web development. I responsible for all the plans of it, and implement it with every technology tools that I learned (and keep learning every time). 
 
 ## Accessibilty
+This web application using with all the special HTML tags to make comfort access to screen readers softwares. 
+* Images and videos contains alternate text.
+* Every text element, link and button has tabIndex attribute create an access with the keyboard (TAB and Shift+TAB keys).
 
 ## Technology 
 For this project I build both server side and client side, and I use variety of tools:
