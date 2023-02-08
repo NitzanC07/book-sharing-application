@@ -16,11 +16,12 @@ function Book(props) {
         <p className='page__text'>תיאור: {props.description}</p>
         {
           user ? 
-          <p className='page__text'>איש קשר: {props.owner}</p> :
+          <p className='page__text'>איש קשר: {props.owner}</p> 
+          : 
           ""
         }
         {
-          user._id === props.owner ?
+          user && user._id === props.owner ?
           <button className="book__delete-btn" onClick={() => dispatch(deleteBook(props.id))}>הסר</button> :
           ""
         }

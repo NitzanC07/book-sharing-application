@@ -11,6 +11,8 @@ import AddNewBook from './pages/AddNewBook';
 import MyBooks from './pages/MyBooks';
 import Footer from './components/Footer/Footer';
 import UserPersonalData from './pages/UserPersonalData';
+import WishlistBooks from './pages/WishlistBooks';
+import CreativityWriting from './pages/CreativityWiriting';
 
 function App() {
   return (
@@ -26,6 +28,8 @@ function App() {
             <Route path='/create-book' element={<AddNewBook />} />
             <Route path='/my-books' element={<MyBooks />} />
             <Route path='/me' element={<UserPersonalData />} />
+            <Route path='/wishlist-books' element={<WishlistBooks />} />
+            <Route path='/creativity-writing' element={<CreativityWriting />} />
           </Routes>
           
           <Footer />

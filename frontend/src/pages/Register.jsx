@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useSelector, useDispatch } from 'react-redux';
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from 'react-toastify';
 import { FaUser } from 'react-icons/fa';
 import { register, reset } from '../features/auth/authSlice';
@@ -265,6 +265,9 @@ function Register() {
                     </button>
                 </div>
             </form>
+            <p className="page__text">
+                יש לך כבר חשבון באתר? התחבר עם הפרטים שלך <Link to={'/login'}>כאן</Link>.
+            </p>
         </section>
         </div>
     </section>

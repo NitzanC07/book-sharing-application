@@ -3,16 +3,19 @@
     padding: 0 15px;
     cursor: pointer;
     background-color: #777;
-    border: 1px solid #777;
+    border: 0px solid #777;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     font-family: 'Varela_Round', 'Rubik', 'Yehuda';
     text-decoration: none;
     color: #fff;
-    font-size: 16px;
+    font-size: 17px;
     line-height: 18px;
 }
 
 .navigation-button:hover {
-    border: 1px solid #222;
+    border-top: 1px solid #222;
+    border-right: 1px solid #222;
+    border-left: 1px solid #222;
+    box-shadow: -5px 2px 7px #777;
 }
