@@ -18,6 +18,13 @@ const createBook = async (bookData, token) => {
     return response.data;
 }
 
+// Get all books
+const getAllBooks = async (token) => {
+    const response = await axios.get(`${API_URI}/all-books`)
+
+    return response.data;
+}
+
 // Get user books
 const getBooks = async (token) => {
     const config = {
@@ -45,7 +52,8 @@ const deleteBook = async (bookId, token) => {
 const bookService = {
     createBook,
     getBooks,
-    deleteBook
+    deleteBook,
+    getAllBooks
 }
 
 export default bookService;

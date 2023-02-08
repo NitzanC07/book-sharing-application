@@ -13,7 +13,7 @@ function Book(props) {
         <p className='page__text'>מחבר: {props.author}</p>
         <p className='page__text'>שפה: {props.language}</p>
         <p className='page__text'>תיאור: {props.description}</p>
-        
+        <p className='page__text'>איש קשר: {props.owner}</p>
         <button className="book__delete-btn" onClick={() => dispatch(deleteBook(props.id))}>הסר</button>
     </div>
   )

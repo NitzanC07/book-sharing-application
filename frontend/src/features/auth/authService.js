@@ -29,10 +29,23 @@ const logout = () => {
     localStorage.removeItem('user');
 }
 
+// Get user personal data
+const getUserPersonalData = async (token) => {
+    const config = {
+        headers: {
+            Authorization: `Bearer ${token}`,
+        }
+    }
+    const response = await axios.get(`${API_URL}/me`, config)
+
+    return response.data;
+}
+
 const authService = {
     register, 
     login,
     logout,
+    getUserPersonalData
 }
 
 export default authService;

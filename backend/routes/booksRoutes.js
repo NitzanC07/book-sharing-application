@@ -9,8 +9,8 @@ const {
 } = require('../controllers/booksController');
 const { protect } = require('../middleware/authMiddleware');
 
+router.route('/all-books').get(getAllBooks);
 router.route('/create-book').post(protect, createBook);
-router.route('/all-books').get(protect, getAllBooks);
 router.route('/my-books').get(protect, getMyBooks);
 router.route('/my-books/:id').delete(protect, deleteBook);
 router.route('/my-books/:id').put(protect, updateBook);

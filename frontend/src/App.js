@@ -10,6 +10,7 @@ import Register from './pages/Register';
 import AddNewBook from './pages/AddNewBook';
 import MyBooks from './pages/MyBooks';
 import Footer from './components/Footer/Footer';
+import UserPersonalData from './pages/UserPersonalData';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             <Route path='/register' element={<Register />} />
             <Route path='/create-book' element={<AddNewBook />} />
             <Route path='/my-books' element={<MyBooks />} />
+            <Route path='/me' element={<UserPersonalData />} />
           </Routes>
           
           <Footer />

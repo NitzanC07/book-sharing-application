@@ -31,6 +31,13 @@ function Navigation(props) {
             >
                 הספרים שלי
             </button>
+            <button 
+                className='navigation-button' 
+                tabIndex={7}
+                onClick={() => (user ? navigate('/me') : navigate('/login'))}
+            >
+                פרטים אישיים
+            </button>
             
         </nav> 
     )
