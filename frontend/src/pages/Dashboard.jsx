@@ -14,18 +14,13 @@ function Dashboard() {
   const { books, isLoading, isError, message } = useSelector((state) => state.books)
 
   useEffect(() => {
-      if(!user) {
-      navigate('/login')
-      } else {
-          dispatch(getAllBooks())
-          return () => {
-          dispatch(reset())
-          } 
-      }
-
+    dispatch(getAllBooks())
+    return () => {
+      dispatch(reset())
       if (isError) {
-      console.log(message);
+        console.log(message);
       }
+    }
   }, [user, navigate, isError, dispatch, message])
 
   if (isLoading) {
@@ -35,7 +30,7 @@ function Dashboard() {
   return (
     <div className="page dashboard">
       <div className="page__content">
-        <h2 className='page__title' tabIndex={7}>מסך ראשי</h2>
+        <h2 className='page__title' tabIndex={7}>הספריה השיתופית</h2>
 
         <div className="page__books-container">
           {

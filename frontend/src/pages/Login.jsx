@@ -53,6 +53,7 @@ function Login() {
 
   return (
     <section className="page">
+        <div className="page__content">
         <section>
             <h1 className="page__title" tabIndex={8}><FaSignInAlt /> כניסת משתמש קיים</h1>
             <p className="page__text" tabIndex={9}>הכנס עם דוא"ל וסיסמא</p>
@@ -108,6 +109,8 @@ function Login() {
                 </div>
             </form>
         </section>
+        </div>
+        
     </section>
   )
 }

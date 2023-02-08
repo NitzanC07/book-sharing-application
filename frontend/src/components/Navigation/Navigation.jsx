@@ -15,21 +15,21 @@ function Navigation(props) {
                 tabIndex={4}
                 onClick={() => (user ? navigate('/') : navigate('/'))}
             >
-                ראשי
-            </button>
-            <button 
-                className='navigation-button' 
-                tabIndex={5}
-                onClick={() => (user ? navigate('/create-book') : navigate('/login'))}
-            >
-                הוסף ספר
+                הספריה השיתופית
             </button>
             <button 
                 className='navigation-button' 
                 tabIndex={6}
                 onClick={() => (user ? navigate('/my-books') : navigate('/login'))}
             >
-                הספרים שלי
+                מדף הספרים שלי
+            </button>
+            <button 
+                className='navigation-button' 
+                tabIndex={5}
+                onClick={() => (user ? navigate('/create-book') : navigate('/login'))}
+            >
+                הוספת ספר
             </button>
             <button 
                 className='navigation-button' 

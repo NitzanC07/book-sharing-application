@@ -76,6 +76,7 @@ function Register() {
     
   return (
     <section className="page">
+        <div className="page__content">
         <section>
             <h1 className="page__title" tabIndex={8}><FaUser /> הרשמה למערכת</h1>
             <p className="page__text" tabIndex={9}>צור חשבון משתמש והתחל לשתף ספרים</p>
@@ -265,6 +266,7 @@ function Register() {
                 </div>
             </form>
         </section>
+        </div>
     </section>
   )
 }
