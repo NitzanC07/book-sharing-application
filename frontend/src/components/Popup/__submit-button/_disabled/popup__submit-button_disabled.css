@@ -1,0 +1,16 @@
+.popup__submit-button_disabled {
+    width: 100%;
+    height: 64px;
+    background-color: #E6E8EB;
+    box-shadow: 0px 5px 15px rgba(14, 26, 57, 0.2);
+    border-radius: 100px;
+    border: 0;
+    cursor: pointer;
+
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    color: #B6BCBF;
+}

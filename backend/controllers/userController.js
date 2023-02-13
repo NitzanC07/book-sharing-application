@@ -30,9 +30,11 @@ const registerUser = asyncHandler(async (req, res) => {
         name,
         email,
         password: hashedPassword,
-        location: {city, country},
-        contact: {phone, social},
-        imageUrl: imageUrl
+        city,
+        country,
+        phone, 
+        social,
+        imageUrl
     })
 
     if(user) {
@@ -61,6 +63,7 @@ const loginUser = asyncHandler(async (req, res) => {
     const user = await User.findOne({ email });
 
     if (user && (await bcrypt.compare(password, user.password))) {
+
         res.status(200).json({
             _id: user.id,
             name: user.name,

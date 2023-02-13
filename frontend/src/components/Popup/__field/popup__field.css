@@ -1,0 +1,25 @@
+.popup__field {
+    margin-bottom: 31px;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    color: #2f71e5;
+}
+
+.popup__field:last-of-type {
+    margin-bottom: 39px;
+}
+
+@media screen and (max-width: 760px) {
+    .popup__field {
+        margin-bottom: 30px;
+    }
+
+    .popup__field:last-of-type {
+        margin-bottom: 23px;
+    }
+}

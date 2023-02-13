@@ -13,6 +13,7 @@ import Footer from './components/Footer/Footer';
 import UserPersonalData from './pages/UserPersonalData';
 import WishlistBooks from './pages/WishlistBooks';
 import CreativityWriting from './pages/CreativityWiriting';
+import PopupUpdatePersonalData from './components/Popup/PopupUpdatePersonalData';
 
 function App() {
   return (
@@ -31,6 +32,13 @@ function App() {
             <Route path='/wishlist-books' element={<WishlistBooks />} />
             <Route path='/creativity-writing' element={<CreativityWriting />} />
           </Routes>
+
+          <PopupUpdatePersonalData 
+            isOpen={true}
+            // onSubmit={handleRegisterSubmit}
+            // onClose={closeAllPopups}
+            // handleDifferentPopup={openPopupSignin}
+          />
           
           <Footer />
         </div>
