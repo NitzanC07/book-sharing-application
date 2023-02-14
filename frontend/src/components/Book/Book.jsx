@@ -9,7 +9,7 @@ function Book(props) {
   const { user } = useSelector((state) => state.auth);
 
   return (
-    <div className='book' key={props.index} tabIndex={props.index + 9}>
+    <div className='book' key={props.index}>
         <h3 className='page__subtitle'>{props.title}</h3>
         <p className='page__text'>מחבר: {props.author}</p>
         <p className='page__text'>שפה: {props.language}</p>

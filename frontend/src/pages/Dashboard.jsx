@@ -30,7 +30,7 @@ function Dashboard() {
   return (
     <div className="page dashboard">
       <div className="page__content">
-        <h2 className='page__title' tabIndex={7}>הספריה השיתופית</h2>
+        <h2 className='page__title'>הספריה השיתופית</h2>
 
         <div className="page__books-container">
           {
@@ -55,7 +55,7 @@ function Dashboard() {
                 updatedAt={book['updatedAt']}
               />
             )) : 
-            <p className="page__text" tabIndex={9}>אין לך עדיין ספרים.</p>
+            <p className="page__text">אין לך עדיין ספרים.</p>
           }
         </div>
       </div>

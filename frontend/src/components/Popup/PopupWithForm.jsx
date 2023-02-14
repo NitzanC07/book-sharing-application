@@ -9,7 +9,7 @@ function PopupWithForm({name, isOpen, onClose, ...props}) {
             <form 
                 className="popup__form"
                 onSubmit={props.onSubmit}>
-                <h2 className="popup__title">{props.title}</h2>
+                <h2 className="popup__title" tabIndex={1}>{props.title}</h2>
                 {props.children}
                 
                 <div className="form-group">

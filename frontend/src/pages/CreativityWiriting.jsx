@@ -7,10 +7,10 @@ function CreativityWriting() {
     return (
       <div className="page creativity-writing">
         <div className="page__content">
-          <h2 className='page__title' tabIndex={7}>כתיבה יצירתית</h2>
+          <h2 className='page__title'>כתיבה יצירתית</h2>
           {
             !user ? 
-            <p className="page__text" tabIndex={11}>עמוד זה פתוח למשתמשים רשומים בלבד.</p>
+            <p className="page__text">עמוד זה פתוח למשתמשים רשומים בלבד.</p>
             :
             ""
           }

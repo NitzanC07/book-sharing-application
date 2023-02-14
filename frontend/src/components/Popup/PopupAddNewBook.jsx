@@ -1,10 +1,16 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from 'react-router-dom';
-import { createBook } from '../features/books/bookSlice';
+import { createBook } from '../../features/books/bookSlice';
+import PopupWithForm from './PopupWithForm';
 
-function AddNewBook() {
 
+function PopupAddNewBook(props) {
+
+    const { user } = useSelector((state) => state.auth);
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+    
     const [bookTitle, setBookTitle] = useState('');
     const [bookAuthor, setBookAuthor] = useState('');
     const [bookLanguage, setBookLanguage] = useState('');
@@ -15,10 +21,6 @@ function AddNewBook() {
     const [bookGenre, setBookGenre] = useState('');
     const [bookLendPeriod, setBookLendPeriod] = useState(30);
     const [bookAvailibilty, setBookAvailibilty] = useState(true);
-
-    const { user } = useSelector((state) => state.auth);
-    const dispatch = useDispatch();
-    const navigate = useNavigate();
 
     const onSubmit = (e) => {
         e.preventDefault();
@@ -35,18 +37,25 @@ function AddNewBook() {
             lendPeriod: bookLendPeriod
         }))
 
+        props.onClose()
         navigate('/my-books')
     }
 
-  return (
-    <section className="page add-new-book">
-        <div className='page__content'>
-            <h2 className='page__title'>הוספת ספר חדש</h2>
+    return(
+        <>
             {
-                !user ? 
-                <p className="page__text">עמוד זה פתוח למשתמשים רשומים בלבד.</p>
-                : 
-                <form onSubmit={onSubmit} className="form">
+                user ?
+
+                <PopupWithForm 
+                    isOpen={props.isOpen ? 'popup_open' : ''}
+                    onClose={props.onClose}
+                    onSubmit={onSubmit}
+                    // isInputsValid={isInputsValid}
+                    title="הוספת ספר חדש"
+                    buttonText="הוספה"
+                    text="הוספה"
+                >
+                    
                     <div className='form-group'>
                         <label 
                             htmlFor='bookTitle' 
@@ -214,19 +223,14 @@ function AddNewBook() {
                         />
                     </div>
 
-                    <div className="form-group">
-                        <button 
-                            className="form__submit-button"
-                            type='submit'
-                        >
-                            הוספת ספר למדף הספרים האישי
-                        </button>
-                    </div>
-                </form>
+                </PopupWithForm>
+                :
+                ""
+
             }
-        </div>
-    </section>
-  )
+        </>
+        
+    )
 }
 
-export default AddNewBook
+export default PopupAddNewBook;

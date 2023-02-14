@@ -25,15 +25,11 @@ function Header() {
         navigate('/')
     }
 
-    const userDetails = () => {
-        console.log(`User details: ${user}`);
-    }
-
   return (
     <header className='header'>
         <section className='header__heading'>
             <div className='header__logo'>
-                <Link to='/' className='header__logo-text' tabIndex={1}>הספריה השיתופית</Link>
+                <Link to='/' className='header__logo-text'>הספריה השיתופית</Link>
             </div>
             <ul className='header__links'>
                 {
@@ -41,12 +37,12 @@ function Header() {
                     (
                         <>
                             <li className='header__list-item'>
-                                <button className='header__link btn-logout' onClick={userDetails} tabIndex={2}>
+                                <button className='header__link btn-logout' onClick={() => navigate('/me')}>
                                     <p className="header__link">{user.name}</p>
                                 </button>
                             </li>
                             <li className='header__list-item'>
-                                <button className='header__link btn-logout' onClick={onLogout} tabIndex={3}>
+                                <button className='header__link btn-logout' onClick={onLogout}>
                                     להתנתק <FaSignOutAlt />
                                 </button>
                             </li>
@@ -55,12 +51,12 @@ function Header() {
                     (
                         <>
                             <li className='header__list-item'>
-                                <Link to='/login' className='header__link' tabIndex={2}>
+                                <Link to='/login' className='header__link'>
                                     <FaSignInAlt /> להתחבר
                                 </Link>
                             </li>
                             <li className='header__list-item'>
-                                <Link to='/register' className='header__link' tabIndex={3}>
+                                <Link to='/register' className='header__link'>
                                     <FaUser /> להרשם
                                 </Link>
                             </li>

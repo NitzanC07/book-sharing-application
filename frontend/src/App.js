@@ -15,17 +15,24 @@ import WishlistBooks from './pages/WishlistBooks';
 import CreativityWriting from './pages/CreativityWiriting';
 import PopupUpdatePersonalData from './components/Popup/PopupUpdatePersonalData';
 import { useState } from 'react';
+import PopupAddNewBook from './components/Popup/PopupAddNewBook';
 
 function App() {
 
-  const [isOpenUpdatePersonalData, setIsOpenUpdatePersonalData] = useState(false);
+  const [isPopupOpenUpdatePersonalData, setIsOpenUpdatePersonalData] = useState(false);
+  const [isPopupAddNewBook, setIsPopupAddNewBook] = useState(false);
 
-  function handleOpenPopups() {
+  function handleOpenPopupUpdatePersonalData() {
       setIsOpenUpdatePersonalData(true);
+  }
+
+  function handlePopupAddNewBook() {
+    setIsPopupAddNewBook(true);
   }
 
   function closeAllPopups() {
     setIsOpenUpdatePersonalData(false);
+    setIsPopupAddNewBook(false);
   }
 
   return (
@@ -39,12 +46,18 @@ function App() {
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />
             <Route path='/create-book' element={<AddNewBook />} />
-            <Route path='/my-books' element={<MyBooks />} />
+            <Route 
+              path='/my-books' 
+              element={
+                <MyBooks
+                  handleOpenPopups={handlePopupAddNewBook}
+                />} 
+              />
             <Route 
               path='/me' 
               element={
                 <UserPersonalData
-                  handleOpenPopups={handleOpenPopups}
+                  handleOpenPopups={handleOpenPopupUpdatePersonalData}
                 />
               } 
             />
@@ -53,7 +66,13 @@ function App() {
           </Routes>
 
           <PopupUpdatePersonalData 
-            isOpen={isOpenUpdatePersonalData}
+            isOpen={isPopupOpenUpdatePersonalData}
+            // onSubmit={handleRegisterSubmit}
+            onClose={closeAllPopups}
+          />
+
+          <PopupAddNewBook 
+            isOpen={isPopupAddNewBook}
             // onSubmit={handleRegisterSubmit}
             onClose={closeAllPopups}
           />

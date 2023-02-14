@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { toast } from 'react-toastify';
 import PopupWithForm from "./PopupWithForm";
-import { updateUserPersonalData, reset } from "../../features/auth/authSlice";
+import { updateUserPersonalData } from "../../features/auth/authSlice";
 import Loading from "../Loading/Laoding";
 
 function PopupUpdatePersonalData(props) {
@@ -72,13 +72,11 @@ function PopupUpdatePersonalData(props) {
                     <label 
                         htmlFor="name"
                         className="form__label"
-                        tabIndex={10}
                     >
                         שם: 
                     </label>
                     <input
                         className='form__input'
-                        tabIndex={11}
                         type='text'
                         id='name'
                         name="name"
@@ -90,14 +88,12 @@ function PopupUpdatePersonalData(props) {
                     <div className="form-group">
                         <label 
                             className="form__label" 
-                            tabIndex={18}
                             htmlFor="city"
                         >
                             עיר: 
                         </label>
                         <input 
                             className='form__input'
-                            tabIndex={19}
                             type='text'
                             id='city'
                             name="city"
@@ -109,14 +105,12 @@ function PopupUpdatePersonalData(props) {
                     <div className="form-group">
                         <label 
                             className="form__label" 
-                            tabIndex={20}
                             htmlFor="country"
                         >
                             מדינה: 
                         </label>
                         <input 
                             className='form__input'
-                            tabIndex={21}
                             type='text'
                             id='country'
                             name="country"
@@ -128,14 +122,12 @@ function PopupUpdatePersonalData(props) {
                     <div className="form-group">
                         <label 
                             className="form__label" 
-                            tabIndex={22}
                             htmlFor="phone"
                         >
                             טלפון: 
                         </label>
                         <input 
                             className='form__input'
-                            tabIndex={23}
                             type='tel'
                             id='phone'
                             name="phone"
@@ -147,14 +139,12 @@ function PopupUpdatePersonalData(props) {
                     <div className="form-group">
                         <label 
                             className="form__label" 
-                            tabIndex={24}
                             htmlFor="text"
                         >
                             רשת חברתית: 
                         </label>
                         <input 
                             className='form__input'
-                            tabIndex={25}
                             type='string'
                             id='social'
                             name="social"
@@ -166,14 +156,12 @@ function PopupUpdatePersonalData(props) {
                     <div className="form-group">
                         <label 
                             className="form__label" 
-                            tabIndex={26}
                             htmlFor="imageUrl"
                         >
                             תמונת פרופיל: 
                         </label>
                         <input 
                             className='form__input'
-                            tabIndex={27}
                             type='text'
                             id='imageUrl'
                             name="imageUrl"

@@ -33,37 +33,49 @@ function MyBooks(props) {
     return (
       <section className="page my-books">
         <div className="page__content">
-          <h2 className="page__title" tabIndex={10}>מדף הספרים שלי</h2>
+          <h2 className="page__title">מדף הספרים שלי</h2>
           {
             !user ? 
-            <p className="page__text" tabIndex={11}>עמוד זה פתוח למשתמשים רשומים בלבד.</p>
+            <p className="page__text">עמוד זה פתוח למשתמשים רשומים בלבד.</p>
             :
+            <>
             <div className="page__books-container">
               {
                 books.length > 0 ? 
+                
                 books.map((book, i) => (
-                  <Book 
-                    key={i}
-                    index={i}
-                    id={book['_id']}
-                    owner={book['owner']}
-                    availibilty={book['availibilty']}
-                    title={book['title']}
-                    author={book['author']}
-                    language={book['language']}
-                    year={book['year']}
-                    description={book['description']}
-                    numberofPages={book['numberOfPages']}
-                    imageUrl={book['imageUrl']}
-                    genre={book['genre']}
-                    lendPeriod={book['lendPeriod']}
-                    createdAt={book['createdAt']}
-                    updatedAt={book['updatedAt']}
-                  />
-                )) : 
-                <p className="page__text" tabIndex={9}>אין לך עדיין ספרים.</p>
+                  
+                <Book 
+                  key={i}
+                  index={i}
+                  id={book['_id']}
+                  owner={book['owner']}
+                  availibilty={book['availibilty']}
+                  title={book['title']}
+                  author={book['author']}
+                  language={book['language']}
+                  year={book['year']}
+                  description={book['description']}
+                  numberofPages={book['numberOfPages']}
+                  imageUrl={book['imageUrl']}
+                  genre={book['genre']}
+                  lendPeriod={book['lendPeriod']}
+                  createdAt={book['createdAt']}
+                  updatedAt={book['updatedAt']}
+                />
+                )) 
+                : 
+                <p className="page__text">אין לך עדיין ספרים.</p>
               }
+              
             </div>
+            <button 
+              className="page__button"
+              onClick={props.handleOpenPopups}
+            >
+              הוספת ספר חדש
+            </button>
+          </>
           }
         </div>
       </section>
