@@ -1,12 +1,15 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { toast } from 'react-toastify';
 import PopupWithForm from "./PopupWithForm";
+import { updateUserPersonalData, reset } from "../../features/auth/authSlice";
+import Loading from "../Loading/Laoding";
 
 function PopupUpdatePersonalData(props) {
 
     const { user } = useSelector((state) => state.auth);   
-    console.log('"Personal data update', user);
+    // console.log('"Personal data update', user);
     
     const [formData, setFormData] =useState({
         name: user ? user.name : '',
@@ -22,6 +25,17 @@ function PopupUpdatePersonalData(props) {
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
+    const { isLoading, isError, isSuccess, message } = useSelector((state) => state.auth);
+
+    useEffect(() => {
+        if (isError) {
+            toast.error(message);
+        }
+
+        // dispatch(reset());
+
+    }, [isError, isSuccess, message, navigate, dispatch])
+
     function onChange(e) {
         setFormData((prevState) => ({
             ...prevState,
@@ -31,7 +45,12 @@ function PopupUpdatePersonalData(props) {
 
     const handleSubmit = (evt) => {
         evt.preventDefault();
-        console.log('Update personal data');
+        console.log('Update personal data', formData);
+        dispatch(updateUserPersonalData({id: user._id, formData}));
+    }
+
+    if (isLoading) {
+        return <Loading />
     }
 
     return(

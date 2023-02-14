@@ -41,11 +41,26 @@ const getUserPersonalData = async (token) => {
     return response.data;
 }
 
+// Update user personal data
+const updateUserPersonalData = async (action, token) => {
+    console.log(action);
+    const config = {
+        headers: {
+            Authorization: `Bearer ${token}`,
+            body: action.formData
+        }
+    }
+    const response = await axios.put(`${API_URL}/me`, config);
+
+    return response.data;
+}
+
 const authService = {
     register, 
     login,
     logout,
-    getUserPersonalData
+    getUserPersonalData,
+    updateUserPersonalData
 }
 
 export default authService;

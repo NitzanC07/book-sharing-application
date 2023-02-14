@@ -47,6 +47,18 @@ export const getUserPersonalData = createAsyncThunk('auth/get', async (_, thunkA
     }
 })
 
+// Update User personal data
+export const updateUserPersonalData = createAsyncThunk('auth/put', 
+    async (action, thunkAPI) => {
+    try {
+        const token = thunkAPI.getState().auth.user.token;
+        return await authService.updateUserPersonalData(action, token);
+    } catch (error) {
+        const message = (error.response && error.response.data && error.response.data.message) || error.message || error.toString();
+        return thunkAPI.rejectWithValue(message);
+    }
+})
+
 export const authSlice = createSlice({
     name: 'auth',
     initialState,
@@ -100,6 +112,20 @@ export const authSlice = createSlice({
                 state.user = action.payload
             })
             .addCase(getUserPersonalData.rejected, (state, action) => {
+                state.isLoading = false
+                state.isError = true
+                state.message = action.payload
+                state.user = null
+            })
+            .addCase(updateUserPersonalData.pending, (state) => {
+                state.isLoading = true
+            })
+            .addCase(updateUserPersonalData.fulfilled, (state, action) => {
+                state.isLoading = false
+                state.isSuccess = true
+                state.user = action.payload
+            })
+            .addCase(updateUserPersonalData.rejected, (state, action) => {
                 state.isLoading = false
                 state.isError = true
                 state.message = action.payload

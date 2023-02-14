@@ -97,6 +97,7 @@ const updateUserData = asyncHandler(async (req, res) => {
         { 
             new: true, 
         });
+        console.log(req.body);
     res.status(200).send(userUpdate)    
 })
 

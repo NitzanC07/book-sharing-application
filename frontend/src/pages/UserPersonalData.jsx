@@ -1,7 +1,11 @@
 import '../styles/page/__button/page__button.css';
 import { useSelector } from "react-redux";
 
-function UserPersonalData() {
+function UserPersonalData(props) {
+
+  const openUpdatePersonalDataPopup = () => {
+    props.handleOpenPopups();
+  }
 
   const { user } = useSelector((state) => state.auth);
   // console.log('"Personal data page', user);
@@ -20,7 +24,11 @@ function UserPersonalData() {
               <p className="page__text" tabIndex={13}>מגורים: {user.location.city}, {user.location.country}</p>
               <p className="page__text" tabIndex={14}>טלפון: {user.contact.phone}</p>
               <p className="page__text" tabIndex={15}>רשת חברתית: {user.contact.social}</p>
-              <button className="page__button" tabIndex={16}>
+              <button 
+                className="page__button"
+                tabIndex={16}
+                onClick={openUpdatePersonalDataPopup}
+              >
                 עדכון פרטים אישיים
               </button>
             </div>

@@ -14,8 +14,20 @@ import UserPersonalData from './pages/UserPersonalData';
 import WishlistBooks from './pages/WishlistBooks';
 import CreativityWriting from './pages/CreativityWiriting';
 import PopupUpdatePersonalData from './components/Popup/PopupUpdatePersonalData';
+import { useState } from 'react';
 
 function App() {
+
+  const [isOpenUpdatePersonalData, setIsOpenUpdatePersonalData] = useState(false);
+
+  function handleOpenPopups() {
+      setIsOpenUpdatePersonalData(true);
+  }
+
+  function closeAllPopups() {
+    setIsOpenUpdatePersonalData(false);
+  }
+
   return (
     <>
       <Router>
@@ -28,16 +40,22 @@ function App() {
             <Route path='/register' element={<Register />} />
             <Route path='/create-book' element={<AddNewBook />} />
             <Route path='/my-books' element={<MyBooks />} />
-            <Route path='/me' element={<UserPersonalData />} />
+            <Route 
+              path='/me' 
+              element={
+                <UserPersonalData
+                  handleOpenPopups={handleOpenPopups}
+                />
+              } 
+            />
             <Route path='/wishlist-books' element={<WishlistBooks />} />
             <Route path='/creativity-writing' element={<CreativityWriting />} />
           </Routes>
 
           <PopupUpdatePersonalData 
-            isOpen={true}
+            isOpen={isOpenUpdatePersonalData}
             // onSubmit={handleRegisterSubmit}
-            // onClose={closeAllPopups}
-            // handleDifferentPopup={openPopupSignin}
+            onClose={closeAllPopups}
           />
           
           <Footer />
