@@ -55,7 +55,7 @@ function Dashboard() {
                 updatedAt={book['updatedAt']}
               />
             )) : 
-            <p className="page__text">אין לך עדיין ספרים.</p>
+            <p className="page__text">הספריה השיתופית וירטואלית ריקה.</p>
           }
         </div>
       </div>

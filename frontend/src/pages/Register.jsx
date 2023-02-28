@@ -14,15 +14,15 @@ function Register() {
         email: '',
         password: '',
         password2: '',
-        city: '',
         country: '',
+        city: '',
         phone: '',
         social: '',
         imageUrl: '',
     })
 
-    const { name, email, password, password2, city, country, phone, social, imageUrl } = formData;
-
+    const { name, email, password, password2, country, city, phone, social, imageUrl } = formData;
+    
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
@@ -58,10 +58,14 @@ function Register() {
                 name,
                 email, 
                 password,
-                city, 
-                country,
-                phone,
-                social,
+                location: {
+                    city, 
+                    country,
+                },
+                contact: {
+                    phone,
+                    social,
+                },
                 imageUrl
             }
 

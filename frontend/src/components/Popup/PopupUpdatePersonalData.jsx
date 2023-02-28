@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import PopupWithForm from "./PopupWithForm";
 import { updateUserPersonalData } from "../../features/auth/authSlice";
 
@@ -11,16 +11,22 @@ function PopupUpdatePersonalData(props) {
     
     const [formData, setFormData] =useState({
         name: user ? user.name : '',
-        city: user ? user.location.city : '',
-        country: user ? user.location.country : '',
-        phone: user ? user.contact.phone : '',
-        social: user ? user.contact.social : '',
+        location: user ? {
+            city: user.location.city,
+            country: user.location.country
+        } : "",
+        contact: user ? {
+            phone: user.contact.phone,
+            social: user.contact.social
+        } : "",
         imageUrl: user ? user.imageUrl : '',
     })
 
-    const { name, city, country, phone, social, imageUrl } = formData;
+    const { name, location, contact, imageUrl } = formData;
+    const { city, country } = location;
+    const { phone, social } = contact;
 
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
     const dispatch = useDispatch();
 
     function onChange(e) {
@@ -32,16 +38,21 @@ function PopupUpdatePersonalData(props) {
 
     const handleSubmit = (evt) => {
         evt.preventDefault();
-        console.log('Update personal data', formData);
+        // console.log('Update personal data', formData);
         dispatch(updateUserPersonalData({
             name: name,
-            city: city, 
-            country: country,
-            phone: phone, 
-            social: social,
+            location: {
+                city: city, 
+                country: country,
+            },
+            contact: {
+                phone: phone, 
+                social: social,
+            },
             imageUrl: imageUrl
         }));
-        navigate('/me');
+        props.onClose()
+        // navigate('/me');
     }
 
     return(

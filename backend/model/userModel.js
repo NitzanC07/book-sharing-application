@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-
 const userSchema = mongoose.Schema({
     name: {
         type: String,
@@ -14,22 +13,26 @@ const userSchema = mongoose.Schema({
         type: String,
         required: [true, 'Please enter your password']
     },
-    city: {
-        type: String,
-        required: false
+    location: {
+        city: {
+            type: String,
+            required: false
+        },
+        country: {
+            type: String,
+            required: false
+        },
     },
-    country: {
-        type: String,
-        required: false
+    contact: {
+        phone: {
+            type: String,
+            required: false
+        },
+        social: {
+            type: String,
+            required: false
+        }, 
     },
-    phone: {
-        type: String,
-        required: false
-    },
-    social: {
-        type: String,
-        required: false
-    }, 
     imageUrl: {
         type: String,
         default: 'Profile picture'
