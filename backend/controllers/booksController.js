@@ -28,7 +28,7 @@ const createBook = asyncHandler(async (req, res) => {
         throw new Error('Please add book\'s details');
     }
     const book = await Book.create({
-        owner: req.user.id,
+        owner: req.user,
         title: req.body.title,
         author: req.body.author,
         language: req.body.language,
