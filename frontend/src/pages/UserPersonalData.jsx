@@ -7,7 +7,7 @@ function UserPersonalData(props) {
     props.handleOpenPopups();
   }
 
-  const { user } = useSelector((state) => state.auth);
+  const { user } = useSelector((state) => (state.auth));
   console.log('"Personal data page', user);
   
     return (
