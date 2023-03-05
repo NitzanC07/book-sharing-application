@@ -17,7 +17,6 @@ function Dashboard() {
     dispatch(getAllBooks())
     return () => {
       dispatch(reset())
-      console.log(books);
       if (isError) {
         console.log(message);
       }
