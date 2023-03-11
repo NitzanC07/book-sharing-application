@@ -1,12 +1,15 @@
 const asyncHandler = require('express-async-handler');
 const Book = require('../model/bookModel');
-const User = require('../model/userModel');
 
 // @desc    Get all books of users.
 // @route   GET /api/books/all-books
 // @access  Private
 const getAllBooks = asyncHandler(async (req, res) => {
-    const books = await Book.find();
+    const books = await Book.find().populate('owner', 'name email');
+    if (!books) {
+        res.status(500)
+        throw new Error('Something went wrong with loading books, try again later.');
+    }
     res.status(200).json(books);
 })
 
@@ -28,7 +31,7 @@ const createBook = asyncHandler(async (req, res) => {
         throw new Error('Please add book\'s details');
     }
     const book = await Book.create({
-        owner: req.user,
+        owner: req.user._id,
         title: req.body.title,
         author: req.body.author,
         language: req.body.language,
@@ -40,7 +43,7 @@ const createBook = asyncHandler(async (req, res) => {
         genre: req.body.genre,
         lendPeriod: req.body.lendPeriod,
     })
-    res.status(200).json(book);
+    res.status(201).json(book);
 })
 
 // @desc    Update a book
