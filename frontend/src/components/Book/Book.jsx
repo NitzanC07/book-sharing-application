@@ -10,19 +10,26 @@ function Book(props) {
   const { user } = useSelector((state) => state.auth);
   const [ownerName, setOwnerName] = useState("");
 
+  // console.log("Owner", props.owner , "User", user);
+
   useEffect(() => {
     // Fetch the owner's details and set the owner's name in state
     const fetchOwnerDetails = async () => {
+      console.log(props.owner ? props.owner : "");
       if (props.owner) {
-        const response = await fetch(`/api/users/${props.owner._id}`);
-        const data = await response.json();
-        console.log(data);
-        setOwnerName(data.name);
+        try {
+          await getOneUserData(props.owner._id)
+          console.log(props.owner.name);
+          setOwnerName(props.owner.name);
+        } catch (error) {
+          console.error(error);
+        }
+        
       }
     };
 
     fetchOwnerDetails();
-  }, [props.owner]);
+  }, [props.owner, ownerName]);
 
   return (
     <div className="book" key={props.index}>

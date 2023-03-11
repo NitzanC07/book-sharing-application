@@ -13,6 +13,6 @@ router.post('/register', registerUser);
 router.post('/login', loginUser);
 router.get('/me', protect, getUserData);
 router.put('/me', protect, updateUserData);
-router.get('/:userId', protect, findOneUser);
+router.get('/owner/:userId', protect, findOneUser);
 
 module.exports = router;

@@ -115,7 +115,7 @@ const updateUserData = asyncHandler(async (req, res) => {
 })
 
 // @desc    Find a specific user from DB.
-// @route   GET /api/users/:userId
+// @route   GET /api/users/owner/:userId
 // @access  Private
 const findOneUser = asyncHandler(async (req, res) => {
 

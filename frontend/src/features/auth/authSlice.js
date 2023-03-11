@@ -62,6 +62,7 @@ export const updateUserPersonalData = createAsyncThunk('auth/put',
 // Get a specific user data.
 export const getOneUserData = createAsyncThunk('auth/getOne', 
     async (userId, thunkAPI) => {
+        console.log("1", userId);
     try {
         const token = thunkAPI.getState().auth.user.token;
         return await authService.getOneUserData(userId, token);

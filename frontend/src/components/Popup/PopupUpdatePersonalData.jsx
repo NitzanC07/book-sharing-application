@@ -11,20 +11,20 @@ function PopupUpdatePersonalData(props) {
     
     const [formData, setFormData] =useState({
         name: user ? user.name : '',
-        location: user ? {
-            city: user.location.city,
-            country: user.location.country
-        } : "",
-        contact: user ? {
-            phone: user.contact.phone,
-            social: user.contact.social
-        } : "",
+        city: user ? user.location.city : '',
+        country: user ? user.location.country : '',
+        // location: user ? {
+        // } : "",
+        phone: user ? user.contact.phone : '',
+        social: user ? user.contact.social : '',
+        // contact: user ? {
+        // } : "",
         imageUrl: user ? user.imageUrl : '',
     })
 
-    const { name, location, contact, imageUrl } = formData;
-    const { city, country } = location;
-    const { phone, social } = contact;
+    const { name, city, country, phone, social, imageUrl } = formData;
+    // const { city, country } = location;
+    // const { phone, social } = contact;
 
     // const navigate = useNavigate();
     const dispatch = useDispatch();

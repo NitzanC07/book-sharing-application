@@ -8,6 +8,7 @@ function UserPersonalData(props) {
   }
 
   const { user } = useSelector((state) => (state.auth));
+  // console.log(user);
   
     return (
       <div className="page user-personal-data">

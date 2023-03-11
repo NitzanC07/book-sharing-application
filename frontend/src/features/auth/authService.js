@@ -66,7 +66,7 @@ const getOneUserData = async (userId, token) => {
         }
     }
     const response = await axios.get(
-        `${API_URL}/${userId}`, 
+        `${API_URL}/owner/${userId}`, 
         config
         );
 
