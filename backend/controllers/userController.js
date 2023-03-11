@@ -50,8 +50,8 @@ const registerUser = asyncHandler(async (req, res) => {
             name: user.name,
             email: user.email,
             token: generateToken(user._id),
-            location: {city: user.city, country: user.country},
-            contact: {phone: user.phone, social: user.social},
+            location: user.location,
+            contact: user.contact,
             imageUrl: user.imageUrl
         })
     } else {
@@ -114,6 +114,20 @@ const updateUserData = asyncHandler(async (req, res) => {
     res.status(200).send(userUpdate)    
 })
 
+// @desc    Find a specific user from DB.
+// @route   GET /api/users/owner/:userId
+// @access  Private
+const findOneUser = asyncHandler(async (req, res) => {
+
+    const user = await User.findById(req.params.userId);
+    if (!user) {
+        res.status(401)
+        throw new Error('The specific user not exist.');
+    }
+    res.status(200).send(user)    
+})
+
+
 // Generate JWT
 const generateToken = (id) => {
     return jwt.sign(
@@ -127,5 +141,6 @@ module.exports = {
     registerUser,
     loginUser,
     getUserData,
-    updateUserData
+    updateUserData, 
+    findOneUser
 }

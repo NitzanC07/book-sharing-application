@@ -57,12 +57,29 @@ const updateUserPersonalData = async (userData, token) => {
     return response.data;
 }
 
+// Get a specific user data.
+const getOneUserData = async (userId, token) => {
+    console.log(userId);
+    const config = {
+        headers: {
+            Authorization: `Bearer ${token}`,
+        }
+    }
+    const response = await axios.get(
+        `${API_URL}/owner/${userId}`, 
+        config
+        );
+
+    return response.data;
+}
+
 const authService = {
     register, 
     login,
     logout,
     getUserPersonalData,
-    updateUserPersonalData
+    updateUserPersonalData, 
+    getOneUserData
 }
 
 export default authService;
