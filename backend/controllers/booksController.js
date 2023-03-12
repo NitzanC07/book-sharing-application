@@ -5,7 +5,7 @@ const Book = require('../model/bookModel');
 // @route   GET /api/books/all-books
 // @access  Private
 const getAllBooks = asyncHandler(async (req, res) => {
-    const books = await Book.find().populate('owner', 'name email');
+    const books = await Book.find().populate('owner', 'name email contact');
     if (!books) {
         res.status(500)
         throw new Error('Something went wrong with loading books, try again later.');
@@ -17,7 +17,7 @@ const getAllBooks = asyncHandler(async (req, res) => {
 // @route   GET /api/books/my-books
 // @access  Private
 const getMyBooks = asyncHandler(async (req, res) => {
-    const books = await Book.find({owner: req.user.id});
+    const books = await Book.find({owner: req.user.id}).populate('owner', 'name email contact');
     res.status(200).json(books);
 })
 
