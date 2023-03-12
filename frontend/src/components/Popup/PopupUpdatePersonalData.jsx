@@ -40,16 +40,16 @@ function PopupUpdatePersonalData(props) {
         evt.preventDefault();
         // console.log('Update personal data', formData);
         dispatch(updateUserPersonalData({
-            name: name,
+            name,
             location: {
-                city: city, 
-                country: country,
+                city, 
+                country,
             },
             contact: {
-                phone: phone, 
-                social: social,
+                phone, 
+                social,
             },
-            imageUrl: imageUrl
+            imageUrl
         }));
         props.onClose()
         // navigate('/me');

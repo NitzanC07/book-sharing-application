@@ -45,24 +45,24 @@ function MyBooks(props) {
                 
                 books.map((book, i) => (
                   
-                <Book 
-                  key={i}
-                  index={i}
-                  id={book['_id']}
-                  owner={book['owner']}
-                  availibilty={book['availibilty']}
-                  title={book['title']}
-                  author={book['author']}
-                  language={book['language']}
-                  year={book['year']}
-                  description={book['description']}
-                  numberofPages={book['numberOfPages']}
-                  imageUrl={book['imageUrl']}
-                  genre={book['genre']}
-                  lendPeriod={book['lendPeriod']}
-                  createdAt={book['createdAt']}
-                  updatedAt={book['updatedAt']}
-                />
+                  <Book 
+                    key={i}
+                    index={i}
+                    id={book['_id']}
+                    owner={book['owner']}
+                    availibilty={book['availibilty']}
+                    title={book['title']}
+                    author={book['author']}
+                    language={book['language']}
+                    year={book['year']}
+                    description={book['description']}
+                    numberofPages={book['numberOfPages']}
+                    imageUrl={book['imageUrl']}
+                    genre={book['genre']}
+                    lendPeriod={book['lendPeriod']}
+                    createdAt={book['createdAt']}
+                    updatedAt={book['updatedAt']}
+                  />
                 )) 
                 : 
                 <p className="page__text">אין לך עדיין ספרים.</p>

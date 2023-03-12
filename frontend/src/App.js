@@ -67,13 +67,11 @@ function App() {
 
           <PopupUpdatePersonalData 
             isOpen={isPopupOpenUpdatePersonalData}
-            // onSubmit={handleRegisterSubmit}
             onClose={closeAllPopups}
           />
 
           <PopupAddNewBook 
             isOpen={isPopupAddNewBook}
-            // onSubmit={handleRegisterSubmit}
             onClose={closeAllPopups}
           />
           
