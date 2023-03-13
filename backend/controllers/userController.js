@@ -96,6 +96,7 @@ const loginUser = asyncHandler(async (req, res) => {
 // @route   GET /api/users/me
 // @access  Private
 const getUserData =asyncHandler(async (req, res) => {
+    console.log("Get user/me: ", req.user);
     res.status(200).json(req.user);
 })
 
@@ -103,6 +104,7 @@ const getUserData =asyncHandler(async (req, res) => {
 // @route   PUT /api/users/me
 // @access  Private
 const updateUserData = asyncHandler(async (req, res) => {
+    console.log("Update user Data: ", req.body);
 
     const userUpdate = await User.findByIdAndUpdate(
         req.user.id,
@@ -110,7 +112,6 @@ const updateUserData = asyncHandler(async (req, res) => {
         { 
             new: true, 
         });
-        console.log(req.body);
     res.status(200).send(userUpdate)    
 })
 

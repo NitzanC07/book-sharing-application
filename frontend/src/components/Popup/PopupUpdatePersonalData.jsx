@@ -7,7 +7,7 @@ import { updateUserPersonalData } from "../../features/auth/authSlice";
 function PopupUpdatePersonalData(props) {
 
     const { user } = useSelector((state) => state.auth);   
-    // console.log('"Personal data update', user);
+    console.log('"Personal data update', user);
     
     const [formData, setFormData] =useState({
         name: user ? user.name : '',
@@ -50,9 +50,11 @@ function PopupUpdatePersonalData(props) {
                 social,
             },
             imageUrl
-        }));
+        })).then(response => {
+            console.log("Response", response);
+            user.name = response.name
+        });
         props.onClose()
-        // navigate('/me');
     }
 
     return(

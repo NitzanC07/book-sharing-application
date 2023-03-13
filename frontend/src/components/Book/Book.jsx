@@ -6,12 +6,12 @@ import { useState, useEffect } from "react";
 import { getOneUserData } from "../../features/auth/authSlice";
 
 function Book(props) {
+
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.auth);
 
   const [ownerName, setOwnerName] = useState("");
-
-  // console.log("Owner", props.owner , "User", user);
+  const [ownerData, setOwnerData] = useState(false);
 
   useEffect(() => {
     // Fetch the owner's details and set the owner's name in state
@@ -30,6 +30,10 @@ function Book(props) {
     fetchOwnerDetails();
   }, [props.owner, ownerName]);
 
+  function getOwnerDetails(e) {
+    ownerData ? setOwnerData(false) : setOwnerData(true);
+  }
+
   return (
     <div className="book" key={props.index}>
       <h3 className="page__subtitle">{props.title}</h3>
@@ -38,7 +42,19 @@ function Book(props) {
       <p className="page__text">תקציר: {props.description}</p>
       {
         user && user._id !== props.owner._id &&
-        <p className="page__text">איש קשר: {ownerName}</p>}
+        <>
+          <p className="page__text">
+            איש קשר: <button 
+              className="btn__book-owner"
+              onClick={(e) => getOwnerDetails(e)}
+              >
+                {ownerName}
+              </button>
+          </p>
+          { user && ownerData && <p className="page__text">טלפון: {props.owner.contact.phone}</p> }
+          
+        </>
+      }
       {
         user && user._id === props.owner._id && (
           <button
