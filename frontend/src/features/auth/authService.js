@@ -42,7 +42,7 @@ const getUserPersonalData = async (token) => {
 
 // Update user personal data
 const updateUserPersonalData = async (userData, token) => {
-    console.log(userData);
+    console.log("2: ", userData);
     const config = {
         headers: {
             Authorization: `Bearer ${token}`,
