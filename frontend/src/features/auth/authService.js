@@ -30,11 +30,15 @@ const logout = () => {
 
 // Get user personal data
 const getUserPersonalData = async (token) => {
+    console.log("Token value: ", token);
+
     const config = {
         headers: {
             Authorization: `Bearer ${token}`,
         }
     }
+    
+
     const response = await axios.get(`${API_URL}/me`, config);
 
     return response.data;

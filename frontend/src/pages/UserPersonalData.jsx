@@ -9,8 +9,8 @@ function UserPersonalData(props) {
   const dispatch = useDispatch();
 
   // const { user } = useSelector((state) => (state.auth));
-  const { user, isLoading, isError, message } = useSelector((state) => state.user);
-  console.log("User: ",user);
+  const { user, isLoading, isError, message } = useSelector((state) => state.auth);
+  // console.log("User: ",user);
 
   useEffect(() => {
     if (user) {
