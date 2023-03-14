@@ -39,6 +39,7 @@ export const logout = createAsyncThunk('auth/logout', async () => {
 // Get User personal data
 export const getUserPersonalData = createAsyncThunk('auth/get', async (_, thunkAPI) => {
     try {
+        console.log("auth state in Slice: ", thunkAPI.getState().auth);
         const token = thunkAPI.getState().auth.user.token;
         return await authService.getUserPersonalData(token);
     } catch (error) {

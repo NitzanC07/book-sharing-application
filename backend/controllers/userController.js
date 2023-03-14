@@ -76,14 +76,8 @@ const loginUser = asyncHandler(async (req, res) => {
             name: user.name,
             email: user.email,
             token: generateToken(user._id),
-            location: {
-                city: user.city, 
-                country: user.country,
-            },
-            contact: {
-                phone: user.phone, 
-                social: user.social,
-            },
+            location: user.location,
+            contact: user.contact,
             imageUrl: user.imageUrl
         })
     } else {
