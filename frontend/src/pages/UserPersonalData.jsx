@@ -5,10 +5,10 @@ import Loading from '../components/Loading/Laoding';
 import { useEffect } from 'react';
 
 function UserPersonalData(props) {
+  // console.log("Activate PersonalDataPage: ", props);
 
   const dispatch = useDispatch();
 
-  // const { user } = useSelector((state) => (state.auth));
   const { user, isLoading, isError, message } = useSelector((state) => state.auth);
   // console.log("User: ",user);
 
@@ -17,10 +17,10 @@ function UserPersonalData(props) {
       dispatch(getUserPersonalData())
       return () => {
         dispatch(reset())
-        if (isError) {
-          console.log(message);
-        }
       }
+    }
+    if (isError) {
+      console.log(message);
     }
   }, [user, isError, dispatch, message])
 
@@ -37,8 +37,7 @@ function UserPersonalData(props) {
         <div className="page__content">
           <h2 className='page__title'>פרטים אישיים</h2>
           {
-            !user ? 
-            <p className="page__text">עמוד זה פתוח למשתמשים רשומים בלבד.</p>
+            !user ? <p className="page__text">עמוד זה פתוח למשתמשים רשומים בלבד.</p>
             :
             <div>
               <p className="page__text">שם: {user.name}</p>

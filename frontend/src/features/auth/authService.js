@@ -16,7 +16,6 @@ const register = async (userData) => {
 // Login user
 const login = async (userData) => {
     const response = await axios.post(`${API_URL}/login`, userData)
-    console.log(response);
 
     if (response.data) {
         localStorage.setItem('user', JSON.stringify(response.data))
@@ -31,16 +30,19 @@ const logout = () => {
 
 // Get user personal data
 const getUserPersonalData = async (token) => {
-    console.log("Token value: ", token);
+    // console.log("Token value: ", token);
 
     const config = {
         headers: {
             Authorization: `Bearer ${token}`,
         }
     }
-    
 
-    const response = await axios.get(`${API_URL}/me`, config);
+    const response = await axios.get(
+        `${API_URL}/me`, 
+        config
+        );
+    // console.log("getUserPersonalData: ", response);
 
     return response.data;
 }
