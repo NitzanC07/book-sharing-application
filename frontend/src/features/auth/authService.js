@@ -30,19 +30,26 @@ const logout = () => {
 
 // Get user personal data
 const getUserPersonalData = async (token) => {
+    // console.log("Token value: ", token);
+
     const config = {
         headers: {
             Authorization: `Bearer ${token}`,
         }
     }
-    const response = await axios.get(`${API_URL}/me`, config);
+
+    const response = await axios.get(
+        `${API_URL}/me`, 
+        config
+        );
+    // console.log("getUserPersonalData: ", response);
 
     return response.data;
 }
 
 // Update user personal data
 const updateUserPersonalData = async (userData, token) => {
-    console.log("2: ", userData);
+    console.log("updateUserPersonalData: ", userData);
     const config = {
         headers: {
             Authorization: `Bearer ${token}`,
