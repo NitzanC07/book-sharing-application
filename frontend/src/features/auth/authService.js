@@ -30,7 +30,7 @@ const logout = () => {
 
 // Get user personal data
 const getUserPersonalData = async (token) => {
-    // console.log("Token value: ", token);
+    console.log("Token value: ", token);
 
     const config = {
         headers: {

@@ -23,10 +23,6 @@ function PopupUpdatePersonalData(props) {
     })
 
     const { name, city, country, phone, social, imageUrl } = formData;
-    // const { city, country } = location;
-    // const { phone, social } = contact;
-
-    // const navigate = useNavigate();
     const dispatch = useDispatch();
 
     function onChange(e) {
@@ -38,7 +34,7 @@ function PopupUpdatePersonalData(props) {
 
     const handleSubmit = (evt) => {
         evt.preventDefault();
-        // console.log('Update personal data', formData);
+        console.log('Update personal data', formData);
         dispatch(updateUserPersonalData({
             name,
             location: {

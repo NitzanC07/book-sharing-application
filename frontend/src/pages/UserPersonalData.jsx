@@ -1,6 +1,6 @@
 import '../styles/page/__button/page__button.css';
 import { useSelector, useDispatch } from "react-redux";
-import { getUserPersonalData, reset } from '../features/auth/authSlice';
+import { getUserPersonalData } from '../features/auth/authSlice';
 import Loading from '../components/Loading/Laoding';
 import { useEffect } from 'react';
 
@@ -13,15 +13,18 @@ function UserPersonalData(props) {
   // console.log("User: ",user);
 
   useEffect(() => {
-    if (user) {
-      dispatch(getUserPersonalData())
-      return () => {
-        dispatch(reset())
+    const fetchUserData = async () => {
+      if (user) {
+        try {
+          await getUserPersonalData()          
+        } catch {
+          if (isError) {
+            console.log(message);
+          }
+        }
       }
     }
-    if (isError) {
-      console.log(message);
-    }
+    fetchUserData();
   }, [user, isError, dispatch, message])
 
   if (isLoading) {
