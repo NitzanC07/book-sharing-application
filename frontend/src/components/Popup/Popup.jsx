@@ -1,17 +1,4 @@
-import './popup.css';
-import './_open/popup_open.css';
-import './__container/popup__container.css';
-import './__close-button/popup__close-button.css';
-import './__field/popup__field.css';
-import './__form/popup__form.css';
-import './__info/popup__info.css';
-import './__input/popup__input.css';
-import './__link/popup__link.css';
-import './__link-info/popup__link-info.css';
-import './__submit-button/popup__submit-button.css';
-import './__submit-button/_disabled/popup__submit-button_disabled.css';
-import './__text/popup__text.css';
-import './__title/popup__title.css';
+import './popup-index.css';
 
 import { useEffect } from "react";
 import closeButton from '../../images/icons/close-icon-black.svg';
